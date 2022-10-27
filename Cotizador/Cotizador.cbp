@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Categorias.cpp" />
+		<Unit filename="Categorias.h" />
+		<Unit filename="Productos.cpp" />
+		<Unit filename="Productos.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

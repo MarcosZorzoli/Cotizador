@@ -1,7 +1,11 @@
 #include <iostream>
 #include <stdlib.h>
 
+
 using namespace std;
+#include "Productos.h"
+#include "Categorias.h"
+
 
 int main()
 {
