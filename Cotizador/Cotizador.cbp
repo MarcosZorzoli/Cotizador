@@ -34,6 +34,8 @@
 		</Compiler>
 		<Unit filename="Categorias.cpp" />
 		<Unit filename="Categorias.h" />
+		<Unit filename="Menues.cpp" />
+		<Unit filename="Menues.h" />
 		<Unit filename="Productos.cpp" />
 		<Unit filename="Productos.h" />
 		<Unit filename="main.cpp" />

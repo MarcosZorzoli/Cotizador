@@ -1,8 +1,9 @@
 #include <iostream>
 #include <stdlib.h>
-
-
+#include <istream>
 using namespace std;
+
+#include "Menues.h"
 #include "Productos.h"
 #include "Categorias.h"
 
@@ -41,28 +42,34 @@ int main()
         case 1:
         {
             system("cls");
-            cout<<" 1- Cotizar"<<endl;
+            Menu menu;
+            menu.menu_cotizar();
             system("pause");
         }
         break;
         case 2:
         {
             system("cls");
-            cout<<" 2- Productos"<<endl;
+
+            Menu menu;
+            menu.menu_productos();
             system("pause");
         }
         break;
         case 3:
         {
             system("cls");
-            cout<<" 3- Categorias"<<endl;
+
+            Menu menu;
+            menu.menu_categorias();
             system("pause");
         }
         break;
         case 4:
         {
             system("cls");
-            cout<<" 4- Proveedores"<<endl;
+            Menu menu;
+            menu.menu_proveedores();
             system("pause");
         }
         break;
@@ -76,7 +83,8 @@ int main()
         case 6:
         {
             system("cls");
-            cout<<" 6- Informes"<<endl;
+            Menu menu;
+            menu.menu_informes();
             system("pause");
         }
         break;

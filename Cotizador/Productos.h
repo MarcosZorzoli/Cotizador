@@ -7,15 +7,15 @@ class Productos{
 
     private:
 
-    int id_categoria;
+    int id_producto;
     char nombre[30];
 
    public:
 
-    int get_id(){return id_categoria;};
+    int get_id(){return id_producto;};
     const char* get_nombre(){return nombre;}
 //sets
-    void set_id(int nuevo_id){id_categoria=nuevo_id;};
+    void set_id(int nuevo_id){id_producto=nuevo_id;};
     void set_nombre(const char *n){strcpy(nombre, n);};
 
 };

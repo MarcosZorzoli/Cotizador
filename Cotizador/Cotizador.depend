@@ -2,14 +2,27 @@
 1666907500 source:c:\users\tt\desktop\cotizador\cotizador\cotizador\categorias.cpp
 	"Categorias.h"
 
-1666914296 c:\users\tt\desktop\cotizador\cotizador\cotizador\categorias.h
+1667243994 c:\users\tt\desktop\cotizador\cotizador\cotizador\categorias.h
 	<cstring>
 
-1666908237 source:c:\users\tt\desktop\cotizador\cotizador\cotizador\main.cpp
+1667248341 source:c:\users\tt\desktop\cotizador\cotizador\cotizador\main.cpp
 	<iostream>
 	<stdlib.h>
+	<istream>
+	"Menues.h"
 	"Productos.h"
 	"Categorias.h"
 
-1666907500 c:\users\tt\desktop\cotizador\cotizador\cotizador\productos.h
+1667243994 c:\users\tt\desktop\cotizador\cotizador\cotizador\productos.h
+	<cstring>
+
+1666914306 source:c:\users\tt\desktop\cotizador\cotizador\cotizador\productos.cpp
+	"Productos.h"
+
+1667245958 c:\users\tt\desktop\cotizador\cotizador\cotizador\menues.h
+
+1667248257 source:c:\users\tt\desktop\cotizador\cotizador\cotizador\menues.cpp
+	"Menues.h"
+	<iostream>
+	<stdlib.h>
 
