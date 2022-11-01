@@ -1,22 +1,26 @@
 #ifndef CATEGORIAS_H_INCLUDED
 #define CATEGORIAS_H_INCLUDED
+#include <string>
 
-#include <cstring>
 
 class categorias
 {
 private:
 
-    char nombre[30]={};
+    char _nombre[50];
     int id_categoria;
 
 public:
 //gets
-    int get_id(){return id_categoria;};
-    const char* get_nombre(){return nombre;}
+    int get_id();
+
+   std::string getNombre();
+
 //sets
-    void set_id(int nuevo_id){id_categoria=nuevo_id;};
-    void set_nombre(const char *n){strcpy(nombre, n);}
+    void set_id(int nuevo_id);
+    void setNombre(std::string nombre);
+
+
 
 };
 

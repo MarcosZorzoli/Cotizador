@@ -17,7 +17,7 @@ void Menu::menu_cotizar()
 
     cout<<"-----Cotizar----- paso 1"<<endl<<endl;
     cout<<"Elegi una Categoria o crea una"<<endl<<endl;
-    cout<<" 1- Crear categoria"<<endl<<endl;
+    cout<<" 1-Crear categoria"<<endl<<endl;
     cout<<" 2 Ferreteria"<<endl;
     cout<<" 3 Almacen"<<endl;
     cout<<" 4 Otra categoria en un vec dinamico"<<endl;

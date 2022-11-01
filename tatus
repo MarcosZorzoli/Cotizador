@@ -1,0 +1,35 @@
+[33mcommit 2410687636088cf56a0583f4338b526ed735f3bf[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Marcos <105459482+MarcosZorzoli@users.noreply.github.com>
+Date:   Mon Oct 31 17:33:55 2022 -0300
+
+    Todos los menues principales menos porcentajes
+
+[33mcommit 1e8cb1ecb469541c1f04b1916bae2c15da7054e6[m
+Author: Marcos <105459482+MarcosZorzoli@users.noreply.github.com>
+Date:   Thu Oct 27 20:53:29 2022 -0300
+
+    acomode el codigo
+
+[33mcommit d02d0a6a3b2c733a632e3983d15b6f236767308d[m
+Author: Marcos <105459482+MarcosZorzoli@users.noreply.github.com>
+Date:   Thu Oct 27 20:46:45 2022 -0300
+
+    Menú y algunas clases base
+
+[33mcommit 12e1f4eb8f48f2a7913c5a0ec2eb0ed05c36b4c7[m
+Author: Marcos <105459482+MarcosZorzoli@users.noreply.github.com>
+Date:   Thu Oct 27 18:10:59 2022 -0300
+
+    Menú principal
+
+[33mcommit c3a8796e394b207038f5fa3ea58f7bec0b88b81d[m
+Author: Marcos <105459482+MarcosZorzoli@users.noreply.github.com>
+Date:   Thu Oct 27 18:05:27 2022 -0300
+
+    Proyecto base
+
+[33mcommit 46a99ca1ac2980980434718b74213d9978b9ab16[m
+Author: Marcos <105459482+MarcosZorzoli@users.noreply.github.com>
+Date:   Thu Oct 27 18:02:54 2022 -0300
+
+    Initial commit

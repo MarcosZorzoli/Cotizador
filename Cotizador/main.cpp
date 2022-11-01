@@ -1,13 +1,11 @@
 #include <iostream>
 #include <stdlib.h>
-#include <istream>
-using namespace std;
-
 #include "Menues.h"
 #include "Productos.h"
 #include "Categorias.h"
 
 
+using namespace std;
 int main()
 {
     int op;
@@ -88,7 +86,8 @@ int main()
             system("pause");
         }
         break;
-        }
+}
     }
 }
+
 

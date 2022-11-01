@@ -1,22 +1,31 @@
 #ifndef PRODUCTOS_H_INCLUDED
 #define PRODUCTOS_H_INCLUDED
-
+#include <iostream>
 #include <cstring>
+#include <string>
 
-class Productos{
+class Producto
+{
+private:
+  int _codigo;
+  float _precio;
+  char _nombre[50]; // usamos char por que esto representa la estructura de un archivo
+int id_categoria;
+public:
+  Producto();
+  int getCodigo();
+  void setCodigo(int codigo);
 
-    private:
+  float getPrecio();
+  void setPrecio(float precio);
 
-    int id_producto;
-    char nombre[30];
 
-   public:
+  std::string getNombre();
+  void setNombre(std::string nombre);
 
-    int get_id(){return id_producto;};
-    const char* get_nombre(){return nombre;}
-//sets
-    void set_id(int nuevo_id){id_producto=nuevo_id;};
-    void set_nombre(const char *n){strcpy(nombre, n);};
+  void cargar();
+  void mostrar();
+
 
 };
 

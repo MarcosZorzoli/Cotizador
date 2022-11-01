@@ -26,3 +26,34 @@
 	<iostream>
 	<stdlib.h>
 
+1667259451 source:c:\users\nico2\documents\github\cotizador\cotizador\categorias.cpp
+	"Categorias.h"
+	"cstring"
+	<string>
+
+1667259361 c:\users\nico2\documents\github\cotizador\cotizador\categorias.h
+	<string>
+
+1667257742 source:c:\users\nico2\documents\github\cotizador\cotizador\main.cpp
+	<iostream>
+	<stdlib.h>
+	"Menues.h"
+	"Productos.h"
+	"Categorias.h"
+
+1667253837 c:\users\nico2\documents\github\cotizador\cotizador\menues.h
+
+1667259047 c:\users\nico2\documents\github\cotizador\cotizador\productos.h
+	<iostream>
+	<cstring>
+	<string>
+
+1667257426 source:c:\users\nico2\documents\github\cotizador\cotizador\menues.cpp
+	"Menues.h"
+	<iostream>
+	<stdlib.h>
+
+1667259014 source:c:\users\nico2\documents\github\cotizador\cotizador\productos.cpp
+	"Productos.h"
+	<iostream>
+
