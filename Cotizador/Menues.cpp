@@ -2,11 +2,9 @@
 #include "Productos.h"
 #include "Categorias.h"
 #include "archivo_productos.h"
-
 #include <iostream>
 #include <stdlib.h>
 
-using namespace std;
 
 void Menu::menu_cotizar()
 {

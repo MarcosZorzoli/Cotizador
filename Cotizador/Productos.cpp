@@ -1,15 +1,14 @@
 #include "Productos.h"
 #include "archivo_productos.h"
-
 #include <iostream>
-using namespace std;
+
 
 Producto::Producto()
 {
     _codigo = 0;
     _precio = 0;
     strcpy(_nombre, "");
-    id_categoria;
+    id_categoria=0;
 }
 
 int Producto::getCodigo() {
@@ -33,7 +32,7 @@ std::string Producto::getNombre() {
     return _nombre;
 }
 
-void Producto::setNombre(std::string nombre) {
+void Producto::setNombre(string nombre) {
     strcpy(_nombre, nombre.c_str());
 }
 

@@ -36,8 +36,12 @@
 		<Unit filename="Categorias.h" />
 		<Unit filename="Menues.cpp" />
 		<Unit filename="Menues.h" />
+		<Unit filename="Precios.cpp" />
+		<Unit filename="Precios.h" />
 		<Unit filename="Productos.cpp" />
 		<Unit filename="Productos.h" />
+		<Unit filename="archivo_categorias.cpp" />
+		<Unit filename="archivo_categorias.h" />
 		<Unit filename="archivo_productos.cpp" />
 		<Unit filename="archivo_productos.h" />
 		<Unit filename="main.cpp" />

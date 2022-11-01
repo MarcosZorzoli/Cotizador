@@ -4,6 +4,10 @@
 #include <cstring>
 #include <string>
 
+using namespace std;
+
+
+
 class Producto
 {
 private:
@@ -20,8 +24,8 @@ public:
   void setPrecio(float precio);
 
 
-  std::string getNombre();
-  void setNombre(std::string nombre);
+  string getNombre();
+  void setNombre(string nombre);
 
   void cargar();
   void mostrar();

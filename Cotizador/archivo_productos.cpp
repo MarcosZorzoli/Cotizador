@@ -1,6 +1,6 @@
 #include "archivo_productos.h"
 #include <iostream>
-using namespace std;
+
 
 
 bool archivo_productos::guardar(Producto producto)

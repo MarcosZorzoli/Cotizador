@@ -1,6 +1,9 @@
 #ifndef MENUES_H_INCLUDED
 #define MENUES_H_INCLUDED
 
+using namespace std;
+
+
 class Menu
 {
 private:

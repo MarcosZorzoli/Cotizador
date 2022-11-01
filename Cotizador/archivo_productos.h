@@ -2,6 +2,9 @@
 #define ARCHIVO_PRODUCTOS_H_INCLUDED
 #include "Productos.h"
 
+using namespace std;
+
+
 class archivo_productos
 {
 public:

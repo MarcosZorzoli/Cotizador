@@ -3,7 +3,7 @@
 #include <string>
 
 //gets
-std::string categorias::getNombre()
+string categorias::getNombre()
 {
     return _nombre;
 }
@@ -11,10 +11,10 @@ std::string categorias::getNombre()
 int categorias::get_id()
 {
     return id_categoria;
-};
+}
 
 //sets
-void categorias::setNombre(std::string nombre)
+void categorias::setNombre(string nombre)
 {
     strcpy(_nombre, nombre.c_str());
 }

@@ -2,6 +2,7 @@
 #define CATEGORIAS_H_INCLUDED
 #include <string>
 
+using namespace std;
 
 class categorias
 {
@@ -13,14 +14,11 @@ private:
 public:
 //gets
     int get_id();
-
-   std::string getNombre();
+    string getNombre();
 
 //sets
     void set_id(int nuevo_id);
-    void setNombre(std::string nombre);
-
-
+    void setNombre(string nombre);
 
 };
 
