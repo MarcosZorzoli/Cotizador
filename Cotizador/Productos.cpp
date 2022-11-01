@@ -1,4 +1,5 @@
 #include "Productos.h"
+#include "archivo_productos.h"
 
 #include <iostream>
 using namespace std;
@@ -37,11 +38,15 @@ void Producto::setNombre(std::string nombre) {
 }
 
 void Producto::cargar() {
+    archivo_productos archi;
+    Producto productos;
     cout << "------------------" << endl;
     cout << "Ingrese nombre: ";
     cin >> _nombre;
     cout << "Ingrese precio: ";
     cin >> _precio;
+    archi.guardar(productos);
+
 }
 void Producto::mostrar()
 {
@@ -51,3 +56,26 @@ void Producto::mostrar()
   cout << "Precio: " << _precio << endl;
   cout << "------------------" << endl << endl;
 }
+int Producto::buscar_producto(int id)
+{
+    Producto p;
+    FILE* pFile;
+  pFile = fopen("productos.dat", "rb");
+  if (pFile == nullptr) {
+
+    return -2;
+  }
+int i=0;
+  while(fread(&p,sizeof(Producto),1,pFile)){
+    if(p.getCodigo()==id)
+  {
+      fclose(pFile);
+      return i;
+  }
+  i++;
+}
+  fclose(pFile);
+  return -1;
+}
+
+

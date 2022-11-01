@@ -3,6 +3,7 @@
 #include "Menues.h"
 #include "Productos.h"
 #include "Categorias.h"
+#include "archivo_productos.h"
 
 
 using namespace std;
@@ -47,10 +48,11 @@ int main()
         break;
         case 2:
         {
+            Menu menu;
+             menu.menu_productos();
             system("cls");
 
-            Menu menu;
-            menu.menu_productos();
+
             system("pause");
         }
         break;

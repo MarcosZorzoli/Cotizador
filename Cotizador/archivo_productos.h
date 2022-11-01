@@ -5,12 +5,15 @@
 class archivo_productos
 {
 public:
-  Producto guardar(Producto productos);
+  bool guardar(Producto productos);
   int generarCodigo();
   int cantidadProductos();
   void leerProductos(Producto productos[], int cantidad);
-  int buscar_producto(int codigo);
   void mostrar_producto();
+  void modificar_precio();
+  bool sobreescribir_precio(Producto p, int pos);
+  Producto leer_Producto(int pos);
+
 };
 
 

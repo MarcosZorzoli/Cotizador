@@ -25,6 +25,7 @@ public:
 
   void cargar();
   void mostrar();
+  int buscar_producto(int codigo);
 
 
 };

@@ -1,4 +1,7 @@
 #include "Menues.h"
+#include "Productos.h"
+#include "Categorias.h"
+#include "archivo_productos.h"
 
 #include <iostream>
 #include <stdlib.h>
@@ -118,6 +121,12 @@ cout<<"0- volver"<<endl;
         {
             system("cls");
             cout<<" 2- Agregar producto"<<endl;
+             Producto productos;
+            archivo_productos archi_prod;
+
+            productos.cargar();
+            archi_prod.guardar(productos);
+
             system("pause");
         }
         break;

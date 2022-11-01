@@ -3,10 +3,9 @@
 using namespace std;
 
 
-Producto archivo_productos::guardar(Producto producto)
+bool archivo_productos::guardar(Producto producto)
 {
   FILE* pFile;
-
   producto.setCodigo(generarCodigo());
 
   pFile = fopen("productos.dat", "ab");
@@ -16,11 +15,11 @@ Producto archivo_productos::guardar(Producto producto)
     exit(1552);
   }
 
-  fwrite(&producto, sizeof(Producto), 1, pFile);
+  bool i=fwrite(&producto, sizeof(Producto), 1, pFile);
 
   fclose(pFile);
 
-  return producto;
+  return i;
 }
 
 int archivo_productos::generarCodigo()
@@ -60,26 +59,73 @@ void archivo_productos::leerProductos(Producto productos[], int cantidad)
 
   fclose(pFile);
 }
-int archivo_productos::buscar_producto(int codigo)
- {
-  for (int i = 0; i < cantidadProductos(); i++) {
-    if (Producto[i].getCodigo()== codigo)
-     {
+void archivo_productos::modificar_precio()
+{
+    archivo_productos ar_producto;
+    Producto productos;
+    float nuevo_precio;
+    int cantidad=cantidadProductos();
 
-        return i;
+    int id, pos;
+    cout<<"ID a buscar: "<<endl;
+    cin>>id;
+
+     pos=productos.buscar_producto(id);
+
+    if(pos>=0)
+    {
+        productos=leer_Producto(pos);
+        productos.mostrar();
+
+
+    cout<<endl;
+    cout<<"ingrese nuevo precio:"<<endl;
+    cin>>nuevo_precio;
+    if(sobreescribir_precio(productos, pos))
+    {
+        cout<<"PRECIO MODIFICADO"<<endl;
     }
+    }
+    else { cout<<"no existe el registro"<<endl;}
+
+    }
+Producto archivo_productos::leer_Producto(int pos)
+{
+    Producto p;
+    FILE* pFile;
+  pFile = fopen("productos.dat", "rb");
+  if (pFile == nullptr) {
+        p.setPrecio(-1);
+    return p;
   }
-  return -1;
+
+  fseek(pFile,pos*sizeof (Producto),SEEK_SET);
+  bool ok= fread(this, sizeof(Producto),1,pFile);
+  if(ok==false)
+  {
+         p.setPrecio(-1);
+    return p;
+  }
+
+  fclose(pFile);
+  return p;
+}
+bool archivo_productos::sobreescribir_precio(Producto p, int pos)
+{
+    FILE* pFile;
+  pFile = fopen("productos.dat", "rb+");
+  if (pFile == nullptr) {
+    return false;
+  }
+
+  fseek(pFile,pos*sizeof (Producto),0);
+  bool ok= fwrite(this, sizeof(Producto),1,pFile);
+
+  fclose(pFile);
+  return ok;
+
 }
 
-void archivo_productos::mostrar_producto() {
-  cout << endl;
-  for (int i = 0; i < cantidadProductos(); i++) {
-    cout << "----------------------------" << endl;
-    cout << "Articulo: #" << i + 1 << endl;
-    cout << "Codigo: " << Producto[i].getCodigo() << endl;
-    cout << "Nombre: " << Producto[i].getNombre() << endl;
-    cout << "Precio: " << Producto[i].getPrecio() << endl;
 
-  }
-}
+
+
