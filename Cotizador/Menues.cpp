@@ -1,6 +1,7 @@
 #include "Menues.h"
 #include "Productos.h"
 #include "Categorias.h"
+#include "archivo_categorias.h"
 #include "archivo_productos.h"
 #include <iostream>
 #include <stdlib.h>
@@ -181,14 +182,22 @@ bool menu_activo=true;
         {
             system("cls");
             cout<<" 1- Lista de categorias"<<endl;
+Archivo_Categoria ac;
+ac.listar_categorias();
 
             system("pause");
         }
         break;
+
         case 2:
         {
+            Archivo_Categoria archi;
+            categorias cat;
+
             system("cls");
             cout<<" 2- Agregar categoria"<<endl;
+            cat.cargar();
+            cat.mostrar();
             system("pause");
         }
         break;

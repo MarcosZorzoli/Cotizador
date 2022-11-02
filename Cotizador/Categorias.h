@@ -20,6 +20,9 @@ public:
     void set_id(int nuevo_id);
     void setNombre(string nombre);
 
+    void cargar();
+    void mostrar();
+    void cargar_categias_vector(categorias vec[], int cantidad);
 };
 
 #endif // CATEGORIAS_H_INCLUDED
