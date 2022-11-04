@@ -183,7 +183,17 @@ bool menu_activo=true;
             system("cls");
             cout<<" 1- Lista de categorias"<<endl;
 Archivo_Categoria ac;
-ac.listar_categorias();
+ int cant_cat= ac.cantidad_categorias();
+ categorias* cat= new categorias[cant_cat];
+
+ ac.obtener_categorias(cat,cant_cat);
+
+ for(int i=0; i< cant_cat;i++)
+ {
+     cout<<"----------------------"<<endl;
+     cat[i].mostrar();
+ }
+ delete[] cat;
 
             system("pause");
         }
@@ -191,13 +201,13 @@ ac.listar_categorias();
 
         case 2:
         {
-            Archivo_Categoria archi;
             categorias cat;
-
+            Archivo_Categoria ac;
             system("cls");
             cout<<" 2- Agregar categoria"<<endl;
+
             cat.cargar();
-            cat.mostrar();
+            ac.guardar(cat);
             system("pause");
         }
         break;

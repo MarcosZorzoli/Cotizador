@@ -4,11 +4,12 @@
 class Archivo_Categoria
 {
 public:
-  bool guardar(categorias cat);
+  void guardar(categorias cat);
    int generar_categoria();
   int cantidad_categorias();
   categorias leer_categorias(int pos);
-  void listar_categorias();
+  FILE* abrirArchivo();
+  void obtener_categorias(categorias* cat, int cantidad);
 
 };
   void cargar_categias_vector(categorias vec[], int cantidad);

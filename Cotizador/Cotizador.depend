@@ -35,7 +35,7 @@
 	<iostream>
 	<stdlib.h>
 
-1667429939 source:c:\users\nico2\documents\github\cotizador\cotizador\categorias.cpp
+1667564514 source:c:\users\nico2\documents\github\cotizador\cotizador\categorias.cpp
 	"Categorias.h"
 	"archivo_categorias.h"
 	"cstring"
@@ -60,7 +60,7 @@
 	<cstring>
 	<string>
 
-1667428792 source:c:\users\nico2\documents\github\cotizador\cotizador\menues.cpp
+1667564977 source:c:\users\nico2\documents\github\cotizador\cotizador\menues.cpp
 	"Menues.h"
 	"Productos.h"
 	"Categorias.h"
@@ -93,11 +93,11 @@
 
 1667342722 c:\users\tt\desktop\cotizador\cotizador\cotizador\archivo_categorias.h
 
-1667429276 source:c:\users\nico2\documents\github\cotizador\cotizador\archivo_categorias.cpp
+1667565889 source:c:\users\nico2\documents\github\cotizador\cotizador\archivo_categorias.cpp
 	"archivo_categorias.h"
 	<iostream>
 
-1667429267 c:\users\nico2\documents\github\cotizador\cotizador\archivo_categorias.h
+1667564959 c:\users\nico2\documents\github\cotizador\cotizador\archivo_categorias.h
 	"Categorias.h"
 
 1667419383 source:c:\users\nico2\documents\github\cotizador\cotizador\precios.cpp

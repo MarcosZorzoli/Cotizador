@@ -32,12 +32,12 @@ void categorias::cargar() {
     cout << "Ingrese nombre: ";
     cin >> _nombre;
     cout << "Ingrese ID de categoria: ";
-    cin >> id_categoria;
-    archi.guardar(cat);
+    cin >>id_categoria;
 
 }
 void categorias::mostrar()
 {
+
   cout << "------------------" << endl;
   cout << "ID de categoria: " << id_categoria << endl;
   cout << "Nombre: " << _nombre << endl;
