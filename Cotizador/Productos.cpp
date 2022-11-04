@@ -62,7 +62,7 @@ int Producto::buscar_producto(int id)
   pFile = fopen("productos.dat", "rb");
   if (pFile == nullptr) {
 
-    return -2;
+    cout<<"error al abrir el archivo"<<endl;
   }
 int i=0;
   while(fread(&p,sizeof(Producto),1,pFile)){

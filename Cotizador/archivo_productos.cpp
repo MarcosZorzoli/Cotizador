@@ -95,16 +95,14 @@ Producto archivo_productos::leer_Producto(int pos)
     FILE* pFile;
   pFile = fopen("productos.dat", "rb");
   if (pFile == nullptr) {
-        p.setPrecio(-1);
-    return p;
+     cout<<"error al abrir el archivo"<<endl;
   }
 
   fseek(pFile,pos*sizeof (Producto),SEEK_SET);
   bool ok= fread(this, sizeof(Producto),1,pFile);
   if(ok==false)
   {
-         p.setPrecio(-1);
-    return p;
+     cout<<"no se pudo leer el archivo"<<endl;
   }
 
   fclose(pFile);
