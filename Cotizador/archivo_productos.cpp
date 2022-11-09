@@ -3,23 +3,22 @@
 
 
 
-bool archivo_productos::guardar(Producto producto)
+void archivo_productos::guardar(Producto producto)
 {
-  FILE* pFile;
-  producto.setCodigo(generarCodigo());
 
-  pFile = fopen("productos.dat", "ab");
+  FILE* pFile;
+
+  pFile = fopen("producto.dat", "ab");
 
   if (pFile == nullptr) {
     cout << "Error al abrir el archivo" << endl;
     exit(1552);
   }
 
-  bool i=fwrite(&producto, sizeof(Producto), 1, pFile);
+  fwrite(&producto, sizeof(Producto), 1, pFile);
 
   fclose(pFile);
 
-  return i;
 }
 
 int archivo_productos::generarCodigo()
@@ -33,7 +32,7 @@ int archivo_productos::cantidadProductos()
   int cantidad = 0;
   Producto producto;
 
-  pFile = fopen("productos.dat", "rb");
+  pFile = fopen("producto.dat", "rb");
 
   if (pFile == nullptr) {
     return 0;
@@ -50,7 +49,7 @@ int archivo_productos::cantidadProductos()
 void archivo_productos::leerProductos(Producto productos[], int cantidad)
 {
   FILE* pFile;
-  pFile = fopen("productos.dat", "rb");
+  pFile = fopen("producto.dat", "rb");
   if (pFile == nullptr) {
     return;
   }
@@ -59,41 +58,13 @@ void archivo_productos::leerProductos(Producto productos[], int cantidad)
 
   fclose(pFile);
 }
-void archivo_productos::modificar_precio()
-{
-    archivo_productos ar_producto;
-    Producto productos;
-    float nuevo_precio;
-    int cantidad=cantidadProductos();
-
-    int id, pos;
-    cout<<"ID a buscar: "<<endl;
-    cin>>id;
-
-     pos=productos.buscar_producto(id);
-
-    if(pos>=0)
-    {
-        productos=leer_Producto(pos);
-        productos.mostrar();
 
 
-    cout<<endl;
-    cout<<"ingrese nuevo precio:"<<endl;
-    cin>>nuevo_precio;
-    if(sobreescribir_precio(productos, pos))
-    {
-        cout<<"PRECIO MODIFICADO"<<endl;
-    }
-    }
-    else { cout<<"no existe el registro"<<endl;}
-
-    }
 Producto archivo_productos::leer_Producto(int pos)
 {
     Producto p;
     FILE* pFile;
-  pFile = fopen("productos.dat", "rb");
+  pFile = fopen("producto.dat", "rb");
   if (pFile == nullptr) {
      cout<<"error al abrir el archivo"<<endl;
   }
@@ -111,7 +82,7 @@ Producto archivo_productos::leer_Producto(int pos)
 bool archivo_productos::sobreescribir_precio(Producto p, int pos)
 {
     FILE* pFile;
-  pFile = fopen("productos.dat", "rb+");
+  pFile = fopen("producto.dat", "rb+");
   if (pFile == nullptr) {
     return false;
   }
@@ -123,6 +94,63 @@ bool archivo_productos::sobreescribir_precio(Producto p, int pos)
   return ok;
 
 }
+FILE* archivo_productos::abrirArchivo()
+{
+    FILE* pFile;
+    pFile = fopen("producto.dat", "rb");
+
+    if (pFile == NULL)
+    {
+        cout << "Error al abrir el archivo" << endl;
+        exit(1550);
+    }
+    return pFile;
+}
+void archivo_productos::obtener_producto(Producto* prod, int cantidad)
+{
+    FILE* pFile = abrirArchivo();
+
+    fread(prod, sizeof(Producto), cantidad, pFile);
+
+    fclose(pFile);
+}
+int archivo_productos::buscarProducto(int ID){
+    archivo_productos ap;
+    Producto r;
+    int i, cant = ap.cantidadProductos();
+    for(i =0; i<cant; i++){
+        ap.leer_Producto(i);
+        if (ID == r.getCodigo()){
+            return i;
+        }
+    }
+    return -1;
+}
+bool archivo_productos::leerDeDisco(int nroRegistro){
+    FILE *p;
+    p = fopen("producto.dat", "rb");
+    if (p == NULL){
+        return false;
+    }
+    fseek(p, nroRegistro * sizeof(Producto), SEEK_SET);
+    bool ok;
+    ok = fread(this, sizeof(Producto), 1, p);
+    fclose(p);
+    return ok;
+}
+bool archivo_productos::guardarEnDisco(int pos){
+    FILE *p;
+    p = fopen("producto.dat", "rb+");
+    if (p == NULL){
+        return false;
+    }
+    bool ok;
+    fseek(p, pos * sizeof(Producto), SEEK_SET);
+    ok = fwrite(this, sizeof(Producto), 1, p);
+    fclose(p);
+    return ok;
+}
+
 
 
 

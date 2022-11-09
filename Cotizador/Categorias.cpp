@@ -50,3 +50,18 @@ void categorias::cargar_categias_vector(categorias vec[], int cantidad) {
     vec[i] = ac.leer_categorias(i);
   }
 }
+void categorias::sobreescribir_categoria(categorias c, int pos)
+{
+    FILE* pFile;
+  pFile = fopen("categoria.dat", "rb+");
+  if (pFile == nullptr) {
+    cout<<"error al abrir el archivo"<<endl;
+  }
+
+  fseek(pFile,pos*sizeof (categorias),0);
+  bool ok= fwrite(this, sizeof(categorias),1,pFile);
+
+  fclose(pFile);
+
+
+}

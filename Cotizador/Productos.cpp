@@ -6,7 +6,6 @@
 Producto::Producto()
 {
     _codigo = 0;
-    _precio = 0;
     strcpy(_nombre, "");
     id_categoria=0;
 }
@@ -37,14 +36,12 @@ void Producto::setNombre(string nombre) {
 }
 
 void Producto::cargar() {
-    archivo_productos archi;
-    Producto productos;
     cout << "------------------" << endl;
-    cout << "Ingrese nombre: ";
-    cin >> _nombre;
-    cout << "Ingrese precio: ";
-    cin >> _precio;
-    archi.guardar(productos);
+     cout << "Codigo: "<<endl;
+     cin>>_codigo;
+    cout << "Ingrese nombre: "<<endl;
+    cin>> _nombre;
+     cout << "------------------" << endl << endl;
 
 }
 void Producto::mostrar()
@@ -52,7 +49,6 @@ void Producto::mostrar()
   cout << "------------------" << endl;
   cout << "Codigo: " << _codigo << endl;
   cout << "Nombre: " << _nombre << endl;
-  cout << "Precio: " << _precio << endl;
   cout << "------------------" << endl << endl;
 }
 int Producto::buscar_producto(int id)

@@ -17,19 +17,19 @@ void Menu::menu_cotizar()
 
         system("cls");
 
-    cout<<"-----Cotizar----- paso 1"<<endl<<endl;
-    cout<<"Elegi una Categoria o crea una"<<endl<<endl;
-    cout<<" 1-Crear categoria"<<endl<<endl;
-    cout<<" 2 Ferreteria"<<endl;
-    cout<<" 3 Almacen"<<endl;
-    cout<<" 4 Otra categoria en un vec dinamico"<<endl;
-    cout<<"-----------------"<<endl;
-    cout<<" 0- volver"<<endl;
-    cout<<"-----------------"<<endl;
+        cout<<"-----Cotizar----- paso 1"<<endl<<endl;
+        cout<<"Elegi una Categoria o crea una"<<endl<<endl;
+        cout<<" 1-Crear categoria"<<endl<<endl;
+        cout<<" 2 Ferreteria"<<endl;
+        cout<<" 3 Almacen"<<endl;
+        cout<<" 4 Otra categoria en un vec dinamico"<<endl;
+        cout<<"-----------------"<<endl;
+        cout<<" 0- volver"<<endl;
+        cout<<"-----------------"<<endl;
 
-    cin>>op;
+        cin>>op;
 
- while(op<0||op>4)
+        while(op<0||op>4)
         {
             cout<<"opcion incorrecta, vuelva a ingresar una opcion"<<endl;
             cin>>op;
@@ -71,15 +71,15 @@ void Menu::menu_cotizar()
             system("pause");
         }
         break;
-    }
+        }
 
     }
 }
 
 void Menu::menu_productos()
 {
-int op;
-bool menu_activo=true;
+    int op;
+    bool menu_activo=true;
     while(menu_activo)
     {
         system("cls");
@@ -108,23 +108,69 @@ bool menu_activo=true;
         break;
         case 1:
         {
-            system("cls");
-cout<<"1- Listar todos"<<endl;
-cout<<"2- Listar por categorias"<<endl;
-cout<<"0- volver"<<endl;
+
+            while(menu_activo)
+            {
+                system("cls");
+                cout<<"1- Listar todos"<<endl;
+                cout<<"2- Listar por categorias"<<endl;
+                cout<<"0- volver"<<endl;
+                cin>>op;
+
+                while(op<0||op>2)
+                {
+                    cout<<"opcion incorrecta, vuelva a ingresar una opcion"<<endl;
+                    cin>>op;
+                }
+                switch(op)
+                {
+
+
+                case 1:
+                {
+                    system("cls");
+            cout<<" 1- Lista de todos los productos"<<endl;
+            archivo_productos ap;
+            int cant_prod= ap.cantidadProductos();
+            Producto* prod= new Producto[cant_prod];
+
+            ap.obtener_producto(prod,cant_prod);
+            for(int i=0; i< cant_prod; i++)
+            {
+                cout<<"----------------------"<<endl;
+                prod[i].mostrar();
+            }
+            delete[] prod;
 
             system("pause");
+                }
+
+
+                break;
+                case 2:
+                {
+                          system("pause");
+                }
+                break;
+                case 0:
+                {
+                    menu_activo=false;
+                }
+                break;
+                }
+            }
         }
-        break;
+
         case 2:
         {
             system("cls");
             cout<<" 2- Agregar producto"<<endl;
-             Producto productos;
-            archivo_productos archi_prod;
+            Producto product;
+            archivo_productos ac;
+            product.cargar();
+            ac.guardar(product);
+            menu_activo=false;
 
-            productos.cargar();
-            archi_prod.guardar(productos);
 
             system("pause");
         }
@@ -133,6 +179,7 @@ cout<<"0- volver"<<endl;
         {
             system("cls");
             cout<<" 3-Modificar producto"<<endl;
+
             system("pause");
         }
         break;
@@ -150,8 +197,8 @@ cout<<"0- volver"<<endl;
 
 void Menu::menu_categorias()
 {
-int op;
-bool menu_activo=true;
+    int op;
+    bool menu_activo=true;
     while(menu_activo)
     {
         system("cls");
@@ -182,18 +229,19 @@ bool menu_activo=true;
         {
             system("cls");
             cout<<" 1- Lista de categorias"<<endl;
-Archivo_Categoria ac;
- int cant_cat= ac.cantidad_categorias();
- categorias* cat= new categorias[cant_cat];
 
- ac.obtener_categorias(cat,cant_cat);
+            Archivo_Categoria ac;
+            int cant_cat= ac.cantidad_categorias();
+            categorias* cat= new categorias[cant_cat];
 
- for(int i=0; i< cant_cat;i++)
- {
-     cout<<"----------------------"<<endl;
-     cat[i].mostrar();
- }
- delete[] cat;
+            ac.obtener_categorias(cat,cant_cat);
+
+            for(int i=0; i< cant_cat; i++)
+            {
+                cout<<"----------------------"<<endl;
+                cat[i].mostrar();
+            }
+            delete[] cat;
 
             system("pause");
         }
@@ -201,10 +249,10 @@ Archivo_Categoria ac;
 
         case 2:
         {
+            cout<<" 2- Agregar categoria"<<endl;
             categorias cat;
             Archivo_Categoria ac;
             system("cls");
-            cout<<" 2- Agregar categoria"<<endl;
 
             cat.cargar();
             ac.guardar(cat);
@@ -215,7 +263,37 @@ Archivo_Categoria ac;
         {
             system("cls");
             cout<<" 3-Modificar categoria"<<endl;
-            system("pause");
+            Archivo_Categoria ac;
+            categorias c;
+            int cant_cat= ac.cantidad_categorias();
+            categorias* cat= new categorias[cant_cat];
+
+            ac.obtener_categorias(cat,cant_cat);
+            int cod;
+            cout<<"ingresar codigo a modificar"<<endl;
+            cin>>cod;
+            for(int i=0; i< cant_cat; i++)
+            {
+                if(cod==cat[i].get_id())
+                {
+                    cat[i].mostrar();
+                    system("pause");
+                    int nuevo_cod;
+                    char nuevo_nombre[30];
+                    cout<<"ingresar nuevo codigo"<<endl;
+                    cin>>nuevo_cod;
+                    cout<<"ingresar nuevo nombre"<<endl;
+                    cin>>nuevo_nombre;
+                    cat[i].setNombre(nuevo_nombre);
+                    cat[i].set_id(nuevo_cod);
+                    cat[i].mostrar();
+                    system("pause");
+                    cat[i].sobreescribir_categoria(c,i);
+                }
+            }
+
+
+
         }
         break;
         case 4:
@@ -232,8 +310,8 @@ Archivo_Categoria ac;
 
 void Menu::menu_proveedores()
 {
-int op;
-bool menu_activo=true;
+    int op;
+    bool menu_activo=true;
     while(menu_activo)
     {
         system("cls");
@@ -335,24 +413,24 @@ void Menu::menu_informes()
         case 1:
         {
             system("cls");
-cout<<"primer informe"<<endl;
+            cout<<"primer informe"<<endl;
             system("pause");
         }
         break;
         case 2:
         {
             system("cls");
-cout<<"segundo informe"<<endl;
+            cout<<"segundo informe"<<endl;
             system("pause");
         }
         break;
         case 3:
         {
             system("cls");
-cout<<"tercer informe"<<endl;
+            cout<<"tercer informe"<<endl;
             system("pause");
         }
+        }
     }
-}
 
 }

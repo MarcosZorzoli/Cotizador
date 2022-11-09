@@ -88,6 +88,47 @@ void Archivo_Categoria::obtener_categorias(categorias* cat, int cantidad)
 
     fclose(pFile);
 }
+bool Archivo_Categoria::guardarEnDisco(int pos){
+    FILE *p;
+    p = fopen("categoria.dat", "rb+");
+    if (p == NULL){
+        return false;
+    }
+    bool ok;
+    fseek(p, pos * sizeof(categorias), SEEK_SET);
+    ok = fwrite(this, sizeof(categorias), 1, p);
+    fclose(p);
+    return ok;
+}
+bool Archivo_Categoria::leerDeDisco(int nroRegistro){
+    FILE *p;
+    p = fopen("categoria.dat", "rb");
+    if (p == NULL){
+        return false;
+    }
+    fseek(p, nroRegistro * sizeof(categorias), SEEK_SET);
+    bool ok;
+    ok = fread(this, sizeof(categorias), 1, p);
+    fclose(p);
+    return ok;
+}
+
+int Archivo_Categoria::buscarCategoria(int ID){
+   Archivo_Categoria ac;
+   categorias c;
+    int i, cant = ac.cantidad_categorias();
+    for(i =0; i<cant; i++){
+    ac.leer_categorias(i);
+        if (ID == c.get_id()){
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+
+
 
 
 

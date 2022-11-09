@@ -8,7 +8,10 @@ using namespace std;
 class archivo_productos
 {
 public:
-  bool guardar(Producto productos);
+    bool guardarEnDisco(int);
+    bool leerDeDisco(int);
+    int buscarProducto(int ID);
+  void guardar(Producto productos);
   int generarCodigo();
   int cantidadProductos();
   void leerProductos(Producto productos[], int cantidad);
@@ -16,6 +19,8 @@ public:
   void modificar_precio();
   bool sobreescribir_precio(Producto p, int pos);
   Producto leer_Producto(int pos);
+  void obtener_producto(Producto* prod, int cantidad);
+  FILE* abrirArchivo();
 
 };
 

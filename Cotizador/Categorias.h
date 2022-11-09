@@ -23,6 +23,7 @@ public:
     void cargar();
     void mostrar();
     void cargar_categias_vector(categorias vec[], int cantidad);
+    void sobreescribir_categoria(categorias c, int pos);
 };
 
 #endif // CATEGORIAS_H_INCLUDED
