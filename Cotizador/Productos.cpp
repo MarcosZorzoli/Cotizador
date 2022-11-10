@@ -72,5 +72,20 @@ int i=0;
   fclose(pFile);
   return -1;
 }
+void Producto::sobreescribir_producto(Producto p, int pos)
+{
+    FILE* pFile;
+  pFile = fopen("producto.dat", "rb+");
+  if (pFile == nullptr) {
+    cout<<"error al abrir el archivo"<<endl;
+  }
+
+  fseek(pFile,pos*sizeof (Producto),0);
+  bool ok= fwrite(this, sizeof(Producto),1,pFile);
+
+  fclose(pFile);
+
+
+}
 
 

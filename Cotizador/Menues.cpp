@@ -179,8 +179,34 @@ void Menu::menu_productos()
         {
             system("cls");
             cout<<" 3-Modificar producto"<<endl;
+            archivo_productos ap;
+            Producto prod;
+            int cant_prod= ap.cantidadProductos();
+            Producto* p= new Producto[cant_prod];
 
-            system("pause");
+            ap.obtener_producto(p,cant_prod);
+            int cod;
+            cout<<"ingresar codigo a modificar"<<endl;
+            cin>>cod;
+            for(int i=0; i< cant_prod; i++)
+            {
+                if(cod==p[i].getCodigo())
+                {
+                    p[i].mostrar();
+                    system("pause");
+                    int nuevo_cod;
+                    char nuevo_nombre[30];
+                    cout<<"ingresar nuevo codigo"<<endl;
+                    cin>>nuevo_cod;
+                    cout<<"ingresar nuevo nombre"<<endl;
+                    cin>>nuevo_nombre;
+                    p[i].setCodigo(nuevo_cod);
+                    p[i].setNombre(nuevo_nombre);
+                    p[i].sobreescribir_producto(prod,i);
+
+                }
+            }
+
         }
         break;
         case 4:

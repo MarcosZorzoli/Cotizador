@@ -30,6 +30,7 @@ public:
   void cargar();
   void mostrar();
   int buscar_producto(int codigo);
+  void sobreescribir_producto(Producto p, int pos);
 
 
 };

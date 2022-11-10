@@ -55,12 +55,12 @@
 
 1667419383 c:\users\nico2\documents\github\cotizador\cotizador\menues.h
 
-1667419383 c:\users\nico2\documents\github\cotizador\cotizador\productos.h
+1668037676 c:\users\nico2\documents\github\cotizador\cotizador\productos.h
 	<iostream>
 	<cstring>
 	<string>
 
-1667954154 source:c:\users\nico2\documents\github\cotizador\cotizador\menues.cpp
+1668038668 source:c:\users\nico2\documents\github\cotizador\cotizador\menues.cpp
 	"Menues.h"
 	"Productos.h"
 	"Categorias.h"
@@ -69,12 +69,12 @@
 	<iostream>
 	<stdlib.h>
 
-1667952990 source:c:\users\nico2\documents\github\cotizador\cotizador\productos.cpp
+1668037676 source:c:\users\nico2\documents\github\cotizador\cotizador\productos.cpp
 	"Productos.h"
 	"archivo_productos.h"
 	<iostream>
 
-1667953616 source:c:\users\nico2\documents\github\cotizador\cotizador\archivo_productos.cpp
+1667954240 source:c:\users\nico2\documents\github\cotizador\cotizador\archivo_productos.cpp
 	"archivo_productos.h"
 	<iostream>
 
