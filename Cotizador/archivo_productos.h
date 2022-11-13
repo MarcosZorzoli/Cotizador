@@ -9,7 +9,6 @@ class archivo_productos
 {
 public:
     bool guardarEnDisco(int);
-    bool leerDeDisco(int);
     int buscarProducto(int ID);
   void guardar(Producto productos);
   int generarCodigo();

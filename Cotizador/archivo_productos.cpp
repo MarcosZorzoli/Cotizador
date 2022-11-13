@@ -111,18 +111,7 @@ int archivo_productos::buscarProducto(int ID){
     }
     return -1;
 }
-bool archivo_productos::leerDeDisco(int nroRegistro){
-    FILE *p;
-    p = fopen("producto.dat", "rb");
-    if (p == NULL){
-        return false;
-    }
-    fseek(p, nroRegistro * sizeof(Producto), SEEK_SET);
-    bool ok;
-    ok = fread(this, sizeof(Producto), 1, p);
-    fclose(p);
-    return ok;
-}
+
 bool archivo_productos::guardarEnDisco(int pos){
     FILE *p;
     p = fopen("producto.dat", "rb+");

@@ -4,7 +4,6 @@
 class Archivo_Categoria
 {
 public:
-    bool leerDeDisco(int);
     bool guardarEnDisco(int);
   void guardar(categorias cat);
    int generar_categoria();

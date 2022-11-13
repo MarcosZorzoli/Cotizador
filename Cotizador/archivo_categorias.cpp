@@ -100,18 +100,6 @@ bool Archivo_Categoria::guardarEnDisco(int pos){
     fclose(p);
     return ok;
 }
-bool Archivo_Categoria::leerDeDisco(int nroRegistro){
-    FILE *p;
-    p = fopen("categoria.dat", "rb");
-    if (p == NULL){
-        return false;
-    }
-    fseek(p, nroRegistro * sizeof(categorias), SEEK_SET);
-    bool ok;
-    ok = fread(this, sizeof(categorias), 1, p);
-    fclose(p);
-    return ok;
-}
 
 int Archivo_Categoria::buscarCategoria(int ID){
    Archivo_Categoria ac;
