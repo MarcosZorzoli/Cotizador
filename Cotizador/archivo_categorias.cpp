@@ -125,7 +125,62 @@ int Archivo_Categoria::buscarCategoria(int ID){
     }
     return -1;
 }
+void Archivo_Categoria::listar_categorias()
+{
+    Archivo_Categoria ac;
+            int cant_cat= ac.cantidad_categorias();
+            categorias* cat= new categorias[cant_cat];
 
+            ac.obtener_categorias(cat,cant_cat);
+
+            for(int i=0; i< cant_cat; i++)
+            {
+                cout<<"----------------------"<<endl;
+                cat[i].mostrar();
+            }
+            delete[] cat;
+}
+void Archivo_Categoria::modificar_categorias()
+{
+    Archivo_Categoria ac;
+            categorias c;
+            int cant_cat= ac.cantidad_categorias();
+            categorias* cat= new categorias[cant_cat];
+
+            ac.obtener_categorias(cat,cant_cat);
+            int cod;
+            cout<<"ingresar codigo a modificar"<<endl;
+            cin>>cod;
+            for(int i=0; i< cant_cat; i++)
+            {
+                if(cod==cat[i].get_id())
+                {
+                    cat[i].mostrar();
+                    system("pause");
+                    int nuevo_cod;
+                    char nuevo_nombre[30];
+                    cout<<"ingresar nuevo codigo"<<endl;
+                    cin>>nuevo_cod;
+                    cout<<"ingresar nuevo nombre"<<endl;
+                    cin>>nuevo_nombre;
+                    cat[i].setNombre(nuevo_nombre);
+                    cat[i].set_id(nuevo_cod);
+                    cat[i].mostrar();
+                    system("pause");
+                    cat[i].sobreescribir_categoria(c,i);
+                }
+            }
+            delete [] cat;
+}
+void Archivo_Categoria::agregar_categoria()
+{
+    categorias cat;
+            Archivo_Categoria ac;
+            system("cls");
+
+            cat.cargar();
+            ac.guardar(cat);
+}
 
 
 

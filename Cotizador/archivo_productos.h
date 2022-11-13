@@ -16,11 +16,13 @@ public:
   int cantidadProductos();
   void leerProductos(Producto productos[], int cantidad);
   void mostrar_producto();
-  void modificar_precio();
-  bool sobreescribir_precio(Producto p, int pos);
   Producto leer_Producto(int pos);
   void obtener_producto(Producto* prod, int cantidad);
   FILE* abrirArchivo();
+
+  void listar_productos();
+  void agregar_producto();
+  void modificar_producto();
 
 };
 

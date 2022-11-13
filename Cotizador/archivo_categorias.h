@@ -4,7 +4,6 @@
 class Archivo_Categoria
 {
 public:
-    bool modificar();
     bool leerDeDisco(int);
     bool guardarEnDisco(int);
   void guardar(categorias cat);
@@ -14,11 +13,12 @@ public:
   FILE* abrirArchivo();
   void obtener_categorias(categorias* cat, int cantidad);
 int buscarCategoria(int ID);
-void modificar_categoria();
-void sobreescribir_categoria(categorias c, int pos);
 
+void listar_categorias();
+void modificar_categorias();
+void agregar_categoria();
 };
-  void cargar_categias_vector(categorias vec[], int cantidad);
+
 
 
 

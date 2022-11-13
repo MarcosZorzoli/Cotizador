@@ -130,17 +130,8 @@ void Menu::menu_productos()
                 {
                     system("cls");
             cout<<" 1- Lista de todos los productos"<<endl;
-            archivo_productos ap;
-            int cant_prod= ap.cantidadProductos();
-            Producto* prod= new Producto[cant_prod];
-
-            ap.obtener_producto(prod,cant_prod);
-            for(int i=0; i< cant_prod; i++)
-            {
-                cout<<"----------------------"<<endl;
-                prod[i].mostrar();
-            }
-            delete[] prod;
+           archivo_productos ap;
+           ap.listar_productos();
 
             system("pause");
                 }
@@ -165,10 +156,8 @@ void Menu::menu_productos()
         {
             system("cls");
             cout<<" 2- Agregar producto"<<endl;
-            Producto product;
-            archivo_productos ac;
-            product.cargar();
-            ac.guardar(product);
+            archivo_productos ap;
+            ap.agregar_producto();
             menu_activo=false;
 
 
@@ -179,34 +168,8 @@ void Menu::menu_productos()
         {
             system("cls");
             cout<<" 3-Modificar producto"<<endl;
-            archivo_productos ap;
-            Producto prod;
-            int cant_prod= ap.cantidadProductos();
-            Producto* p= new Producto[cant_prod];
-
-            ap.obtener_producto(p,cant_prod);
-            int cod;
-            cout<<"ingresar codigo a modificar"<<endl;
-            cin>>cod;
-            for(int i=0; i< cant_prod; i++)
-            {
-                if(cod==p[i].getCodigo())
-                {
-                    p[i].mostrar();
-                    system("pause");
-                    int nuevo_cod;
-                    char nuevo_nombre[30];
-                    cout<<"ingresar nuevo codigo"<<endl;
-                    cin>>nuevo_cod;
-                    cout<<"ingresar nuevo nombre"<<endl;
-                    cin>>nuevo_nombre;
-                    p[i].setCodigo(nuevo_cod);
-                    p[i].setNombre(nuevo_nombre);
-                    p[i].sobreescribir_producto(prod,i);
-
-                }
-            }
-
+           archivo_productos ap;
+           ap.modificar_producto();
         }
         break;
         case 4:
@@ -255,19 +218,9 @@ void Menu::menu_categorias()
         {
             system("cls");
             cout<<" 1- Lista de categorias"<<endl;
+          Archivo_Categoria ac;
+          ac.listar_categorias();
 
-            Archivo_Categoria ac;
-            int cant_cat= ac.cantidad_categorias();
-            categorias* cat= new categorias[cant_cat];
-
-            ac.obtener_categorias(cat,cant_cat);
-
-            for(int i=0; i< cant_cat; i++)
-            {
-                cout<<"----------------------"<<endl;
-                cat[i].mostrar();
-            }
-            delete[] cat;
 
             system("pause");
         }
@@ -276,13 +229,9 @@ void Menu::menu_categorias()
         case 2:
         {
             cout<<" 2- Agregar categoria"<<endl;
-            categorias cat;
-            Archivo_Categoria ac;
-            system("cls");
 
-            cat.cargar();
-            ac.guardar(cat);
-            system("pause");
+            Archivo_Categoria ac;
+            ac.agregar_categoria();
         }
         break;
         case 3:
@@ -290,37 +239,8 @@ void Menu::menu_categorias()
             system("cls");
             cout<<" 3-Modificar categoria"<<endl;
             Archivo_Categoria ac;
-            categorias c;
-            int cant_cat= ac.cantidad_categorias();
-            categorias* cat= new categorias[cant_cat];
-
-            ac.obtener_categorias(cat,cant_cat);
-            int cod;
-            cout<<"ingresar codigo a modificar"<<endl;
-            cin>>cod;
-            for(int i=0; i< cant_cat; i++)
-            {
-                if(cod==cat[i].get_id())
-                {
-                    cat[i].mostrar();
-                    system("pause");
-                    int nuevo_cod;
-                    char nuevo_nombre[30];
-                    cout<<"ingresar nuevo codigo"<<endl;
-                    cin>>nuevo_cod;
-                    cout<<"ingresar nuevo nombre"<<endl;
-                    cin>>nuevo_nombre;
-                    cat[i].setNombre(nuevo_nombre);
-                    cat[i].set_id(nuevo_cod);
-                    cat[i].mostrar();
-                    system("pause");
-                    cat[i].sobreescribir_categoria(c,i);
-                }
-            }
-
-
-
-        }
+            ac.modificar_categorias();
+}
         break;
         case 4:
         {

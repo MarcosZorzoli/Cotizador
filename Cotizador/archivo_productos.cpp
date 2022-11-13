@@ -79,21 +79,6 @@ Producto archivo_productos::leer_Producto(int pos)
   fclose(pFile);
   return p;
 }
-bool archivo_productos::sobreescribir_precio(Producto p, int pos)
-{
-    FILE* pFile;
-  pFile = fopen("producto.dat", "rb+");
-  if (pFile == nullptr) {
-    return false;
-  }
-
-  fseek(pFile,pos*sizeof (Producto),0);
-  bool ok= fwrite(this, sizeof(Producto),1,pFile);
-
-  fclose(pFile);
-  return ok;
-
-}
 FILE* archivo_productos::abrirArchivo()
 {
     FILE* pFile;
@@ -150,8 +135,59 @@ bool archivo_productos::guardarEnDisco(int pos){
     fclose(p);
     return ok;
 }
+void archivo_productos::listar_productos()
+{
+     archivo_productos ap;
+            int cant_prod= ap.cantidadProductos();
+            Producto* prod= new Producto[cant_prod];
 
+            ap.obtener_producto(prod,cant_prod);
+            for(int i=0; i< cant_prod; i++)
+            {
+                cout<<"----------------------"<<endl;
+                prod[i].mostrar();
+            }
+            delete[] prod;
+}
+void archivo_productos::agregar_producto()
+{
+    Producto product;
+            archivo_productos ac;
+            product.cargar();
+            ac.guardar(product);
+}
+void archivo_productos::modificar_producto()
+{
+     archivo_productos ap;
+            Producto prod;
+            int cant_prod= ap.cantidadProductos();
+            Producto* p= new Producto[cant_prod];
 
+            ap.obtener_producto(p,cant_prod);
+            int cod;
+            cout<<"ingresar codigo a modificar"<<endl;
+            cin>>cod;
+            for(int i=0; i< cant_prod; i++)
+            {
+                if(cod==p[i].getCodigo())
+                {
+                    p[i].mostrar();
+                    system("pause");
+                    int nuevo_cod;
+                    char nuevo_nombre[30];
+                    cout<<"ingresar nuevo codigo"<<endl;
+                    cin>>nuevo_cod;
+                    cout<<"ingresar nuevo nombre"<<endl;
+                    cin>>nuevo_nombre;
+                    p[i].setCodigo(nuevo_cod);
+                    p[i].setNombre(nuevo_nombre);
+                    p[i].sobreescribir_producto(prod,i);
+
+                }
+                delete [] p;
+            }
+
+}
 
 
 
