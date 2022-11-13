@@ -177,6 +177,27 @@ void archivo_productos::modificar_producto()
             }
 
 }
+void archivo_productos::listarXcategoria()
+{
+    archivo_productos ap;
+            Producto prod;
+            int cant_prod= ap.cantidadProductos();
+            Producto* p= new Producto[cant_prod];
+
+            ap.obtener_producto(p,cant_prod);
+            int cod;
+            cout<<"ingresar ID de categoria"<<endl;
+            cin>>cod;
+            for(int i=0; i< cant_prod; i++)
+            {
+                if(cod==p[i].getID_categoria())
+                {
+                    p[i].mostrar();
+                }
+            }
+                    system("pause");
+            delete []p;
+}
 
 
 

@@ -139,8 +139,11 @@ void Menu::menu_productos()
 
                 break;
                 case 2:
-                {
-                          system("pause");
+                {        system("cls");
+                cout<<"2- Lista por categoria"<<endl;
+                archivo_productos ap;
+                ap.listarXcategoria();
+
                 }
                 break;
                 case 0:
@@ -216,13 +219,10 @@ void Menu::menu_categorias()
         break;
         case 1:
         {
-            system("cls");
             cout<<" 1- Lista de categorias"<<endl;
           Archivo_Categoria ac;
           ac.listar_categorias();
 
-
-            system("pause");
         }
         break;
 

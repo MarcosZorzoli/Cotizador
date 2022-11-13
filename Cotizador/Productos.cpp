@@ -21,6 +21,10 @@ void Producto::setCodigo(int codigo) {
 float Producto::getPrecio() {
     return _precio;
 }
+int Producto::getID_categoria()
+{
+    return id_categoria;
+}
 
 void Producto::setPrecio(float precio) {
     _precio = precio;
@@ -37,10 +41,12 @@ void Producto::setNombre(string nombre) {
 
 void Producto::cargar() {
     cout << "------------------" << endl;
-     cout << "Codigo: "<<endl;
+     cout << "Imgrese ID de producto: "<<endl;
      cin>>_codigo;
     cout << "Ingrese nombre: "<<endl;
     cin>> _nombre;
+     cout << "Ingrese ID de categoria: "<<endl;
+    cin>> id_categoria;
      cout << "------------------" << endl << endl;
 
 }
@@ -49,6 +55,7 @@ void Producto::mostrar()
   cout << "------------------" << endl;
   cout << "Codigo: " << _codigo << endl;
   cout << "Nombre: " << _nombre << endl;
+  cout<<"ID categoria: "<<id_categoria<<endl;
   cout << "------------------" << endl << endl;
 }
 int Producto::buscar_producto(int id)

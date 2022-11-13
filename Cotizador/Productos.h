@@ -14,12 +14,12 @@ private:
   int _codigo;
   float _precio;
   char _nombre[50]; // usamos char por que esto representa la estructura de un archivo
-int id_categoria;
+ int id_categoria;
 public:
   Producto();
   int getCodigo();
   void setCodigo(int codigo);
-
+int getID_categoria();
   float getPrecio();
   void setPrecio(float precio);
 

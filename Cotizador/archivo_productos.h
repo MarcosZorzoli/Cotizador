@@ -22,6 +22,7 @@ public:
   void listar_productos();
   void agregar_producto();
   void modificar_producto();
+  void listarXcategoria();
 
 };
 

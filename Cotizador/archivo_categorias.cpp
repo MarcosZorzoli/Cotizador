@@ -125,6 +125,7 @@ void Archivo_Categoria::listar_categorias()
             {
                 cout<<"----------------------"<<endl;
                 cat[i].mostrar();
+
             }
             delete[] cat;
 }
