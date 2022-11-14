@@ -40,6 +40,10 @@
 		<Unit filename="Precios.h" />
 		<Unit filename="Productos.cpp" />
 		<Unit filename="Productos.h" />
+		<Unit filename="Proveedores.cpp" />
+		<Unit filename="Proveedores.h" />
+		<Unit filename="archivo_Proveedores.cpp" />
+		<Unit filename="archivo_Proveedores.h" />
 		<Unit filename="archivo_categorias.cpp" />
 		<Unit filename="archivo_categorias.h" />
 		<Unit filename="archivo_productos.cpp" />

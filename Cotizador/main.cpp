@@ -4,7 +4,8 @@
 #include "Productos.h"
 #include "Categorias.h"
 #include "archivo_productos.h"
-
+#include "archivo_Proveedores.h"
+#include "Proveedores.h"
 
 using namespace std;
 int main()

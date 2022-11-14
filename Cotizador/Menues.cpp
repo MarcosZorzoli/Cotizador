@@ -3,6 +3,8 @@
 #include "Categorias.h"
 #include "archivo_categorias.h"
 #include "archivo_productos.h"
+#include "archivo_Proveedores.h"
+#include "Proveedores.h"
 #include <iostream>
 #include <stdlib.h>
 
@@ -129,20 +131,21 @@ void Menu::menu_productos()
                 case 1:
                 {
                     system("cls");
-            cout<<" 1- Lista de todos los productos"<<endl;
-           archivo_productos ap;
-           ap.listar_productos();
+                    cout<<" 1- Lista de todos los productos"<<endl;
+                    archivo_productos ap;
+                    ap.listar_productos();
 
-            system("pause");
+                    system("pause");
                 }
 
 
                 break;
                 case 2:
-                {        system("cls");
-                cout<<"2- Lista por categoria"<<endl;
-                archivo_productos ap;
-                ap.listarXcategoria();
+                {
+                    system("cls");
+                    cout<<"2- Lista por categoria"<<endl;
+                    archivo_productos ap;
+                    ap.listarXcategoria();
 
                 }
                 break;
@@ -171,8 +174,8 @@ void Menu::menu_productos()
         {
             system("cls");
             cout<<" 3-Modificar producto"<<endl;
-           archivo_productos ap;
-           ap.modificar_producto();
+            archivo_productos ap;
+            ap.modificar_producto();
         }
         break;
         case 4:
@@ -220,8 +223,8 @@ void Menu::menu_categorias()
         case 1:
         {
             cout<<" 1- Lista de categorias"<<endl;
-          Archivo_Categoria ac;
-          ac.listar_categorias();
+            Archivo_Categoria ac;
+            ac.listar_categorias();
 
         }
         break;
@@ -240,7 +243,7 @@ void Menu::menu_categorias()
             cout<<" 3-Modificar categoria"<<endl;
             Archivo_Categoria ac;
             ac.modificar_categorias();
-}
+        }
         break;
         case 4:
         {
@@ -286,30 +289,51 @@ void Menu::menu_proveedores()
         break;
         case 1:
         {
-            system("cls");
-            cout<<" 1- Lista de categorias"<<endl;
 
+            system("cls");
+            cout<<"Listar Proveedores"<<endl<<endl;
+            archivo_Proveedores archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Proveedores Activos"<<endl<<endl;
+            }
+            else
+            {
+                archivo.listar(cant);
+            }
             system("pause");
         }
         break;
         case 2:
         {
             system("cls");
-            cout<<" 2- Agregar proveedor"<<endl;
+            cout<<"Cargar Proveedor"<<endl<<endl;
+            Proveedores Proveedor;
+            Proveedor.Cargar();
+            archivo_Proveedores archivo;
+            archivo.guardar(Proveedor);
+            Proveedor.Mostrar();
             system("pause");
         }
         break;
         case 3:
         {
             system("cls");
-            cout<<" 3-Modificar proveedor"<<endl;
+            cout<<"Modificar Proveedor"<<endl<<endl;
+            archivo_Proveedores archivo;
+            archivo.modificar();
             system("pause");
         }
         break;
         case 4:
         {
             system("cls");
-            cout<<" 4- Eliminar proveedor"<<endl;
+            cout<<"Eliminar Proveedor"<<endl<<endl;
+
+            archivo_Proveedores archivo;
+            archivo.baja_Logica();
             system("pause");
         }
         break;
