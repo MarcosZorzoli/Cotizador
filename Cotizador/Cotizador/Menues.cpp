@@ -1,10 +1,10 @@
 #include "Menues.h"
-#include "Productos.h"
 #include "Categorias.h"
 #include "archivo_categorias.h"
 #include "archivo_productos.h"
 #include "archivo_Proveedores.h"
 #include "Proveedores.h"
+#include "Productos.h"
 #include <iostream>
 #include <stdlib.h>
 
@@ -132,10 +132,20 @@ void Menu::menu_productos()
                 {
                     system("cls");
                     cout<<" 1- Lista de todos los productos"<<endl;
-                    archivo_productos ap;
-                    ap.listar_productos();
+            archivo_productos archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Productos Activos"<<endl<<endl;
+            }
+            else
+            {
+                archivo.listar(cant);
+            }
+            system("pause");
 
-                    system("pause");
+
                 }
 
 
@@ -144,44 +154,50 @@ void Menu::menu_productos()
                 {
                     system("cls");
                     cout<<"2- Lista por categoria"<<endl;
-                    archivo_productos ap;
-                    ap.listarXcategoria();
+               archivo_productos archivo;
+               archivo.listaXcategoria();
+               system("pause");
 
-                }
+}
                 break;
                 case 0:
                 {
                     menu_activo=false;
                 }
-                break;
                 }
-            }
+
         }
+                break;
 
         case 2:
         {
             system("cls");
             cout<<" 2- Agregar producto"<<endl;
-            archivo_productos ap;
-            ap.agregar_producto();
-            menu_activo=false;
-
-
+            Productos producto;
+            producto.Cargar();
+            archivo_productos archivo;
+            archivo.guardar(producto);
+            producto.Mostrar();
             system("pause");
+
+
         }
         break;
         case 3:
         {
             system("cls");
             cout<<" 3-Modificar producto"<<endl;
-            archivo_productos ap;
-            ap.modificar_producto();
+           archivo_productos archivo;
+            archivo.modificar();
+            system("pause");
         }
         break;
         case 4:
         {
             system("cls");
             cout<<" 4- Eliminar producto"<<endl;
+             archivo_Proveedores archivo;
+            archivo.baja_Logica();
             system("pause");
         }
         break;
@@ -189,7 +205,7 @@ void Menu::menu_productos()
         }
     }
 }
-
+}
 void Menu::menu_categorias()
 {
     int op;

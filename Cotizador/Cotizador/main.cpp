@@ -1,11 +1,11 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Menues.h"
-#include "Productos.h"
+
 #include "Categorias.h"
 #include "archivo_productos.h"
-#include "archivo_Proveedores.h"
-#include "Proveedores.h"
+#include "archivo_productos.h"
+#include "Productos.h"
 
 using namespace std;
 int main()

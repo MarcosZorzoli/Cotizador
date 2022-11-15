@@ -6,7 +6,7 @@ using namespace std;
 
 class categorias
 {
-private:
+protected:
 
     char _nombre[50];
     int id_categoria;
