@@ -11,8 +11,7 @@ void Archivo_Categoria::guardar(categorias cat)
 
     if (pFile == nullptr)
     {
-        cout << "Error al abrir el archivo" << endl;
-        exit(1552);
+        cout << "Error para guardar la Categoria" << endl;
     }
 
     fwrite(&cat, sizeof(categorias), 1, pFile);
@@ -20,6 +19,24 @@ void Archivo_Categoria::guardar(categorias cat)
     fclose(pFile);
 
 }
+
+categorias Archivo_Categoria::leer_de_disco(int posicion)
+{
+  categorias categoria;
+  FILE* p;
+  p = fopen("categoria.dat", "rb");
+
+  if (p == nullptr){
+    std::cout << "Error al abrir el archivo" << std::endl;
+  }
+
+  fseek(p, posicion * sizeof(categorias), SEEK_SET);
+  fread(&categoria, sizeof(categorias), 1, p);
+  fclose(p);
+
+  return categoria;
+}
+
 
 int Archivo_Categoria::generar_categoria()
 {
@@ -30,7 +47,6 @@ int Archivo_Categoria::cantidad_categorias()
 {
     FILE* pFile;
     int cantidad = 0;
-    categorias cat;
 
     pFile = fopen("categoria.dat", "rb");
 
@@ -53,14 +69,14 @@ categorias Archivo_Categoria::leer_categorias(int pos)
     pFile = fopen("categoria.dat", "rb");
     if (pFile == nullptr)
     {
-        cout<<"no se pudo abrir el archivo"<<endl;
+        cout<<"No se pudo abrir el archivo"<<endl;
     }
 
     fseek(pFile,pos*sizeof (categorias),SEEK_SET);
     bool ok= fread(this, sizeof(categorias),1,pFile);
     if(ok==false)
     {
-        cout<<"no se pudo leer el archivo"<<endl;
+        cout<<"No se pudo leer el archivo"<<endl;
     }
 
     fclose(pFile);
@@ -76,7 +92,6 @@ FILE* Archivo_Categoria::abrirArchivo()
     if (pFile == NULL)
     {
         cout << "Error al abrir el archivo" << endl;
-        exit(1550);
     }
     return pFile;
 }
@@ -171,8 +186,19 @@ void Archivo_Categoria::agregar_categoria()
             ac.guardar(cat);
 }
 
+int Archivo_Categoria::get_cantidad_Activa(int cantidad)
+{ int contador=0;
 
-
-
+    for (int i = 0; i < cantidad; i++)
+    {
+        categorias categoria;
+        categoria=leer_de_disco(i);
+        if(categoria.getEstado())
+        {
+        contador++;
+        }
+    }
+    return contador;
+}
 
 

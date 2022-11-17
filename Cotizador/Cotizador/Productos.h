@@ -9,6 +9,7 @@ class Productos:public categorias
 {
 private:
     int id_producto;
+    char nombre[50];
     bool estado;
 public:
     Productos();

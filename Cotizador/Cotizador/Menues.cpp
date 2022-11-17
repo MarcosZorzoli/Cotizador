@@ -47,7 +47,7 @@ void Menu::menu_cotizar()
         case 1:
         {
             system("cls");
-            cout<<" 1 - Nueva categoria"<<endl;
+            cout<<" 1 -  categoria"<<endl;
             //despues hago que esta opcion sea la letra "N", asi las categorias creadas se listan desde el 1
             system("pause");
         }
@@ -110,12 +110,13 @@ void Menu::menu_productos()
         break;
         case 1:
         {
-
             while(menu_activo)
-            {
-                system("cls");
-                cout<<"1- Listar todos"<<endl;
-                cout<<"2- Listar por categorias"<<endl;
+            {   system("cls");
+            cout<<"Listar Productos"<<endl<<endl;;
+
+
+                cout<<"1- Todos"<<endl;
+                cout<<"2- Listar por categorias"<<endl<<endl;
                 cout<<"0- volver"<<endl;
                 cin>>op;
 
@@ -127,11 +128,10 @@ void Menu::menu_productos()
                 switch(op)
                 {
 
-
                 case 1:
                 {
                     system("cls");
-                    cout<<" 1- Lista de todos los productos"<<endl;
+                    cout<<"Lista de todos los productos"<<endl;
             archivo_productos archivo;
             int cant=archivo.cantidad_de_registros();
             int cantActiva=archivo.get_cantidad_Activa(cant);
@@ -148,15 +148,23 @@ void Menu::menu_productos()
 
                 }
 
-
                 break;
                 case 2:
                 {
                     system("cls");
-                    cout<<"2- Lista por categoria"<<endl;
-               archivo_productos archivo;
+                    cout<<" Lista por categoria"<<endl;
+                           archivo_productos archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Productos Activos"<<endl<<endl;
+            }
+            else
+            {
                archivo.listaXcategoria();
-               system("pause");
+            }
+            system("pause");
 
 }
                 break;
@@ -196,7 +204,7 @@ void Menu::menu_productos()
         {
             system("cls");
             cout<<" 4- Eliminar producto"<<endl;
-             archivo_Proveedores archivo;
+             archivo_productos archivo;
             archivo.baja_Logica();
             system("pause");
         }
@@ -238,9 +246,20 @@ void Menu::menu_categorias()
         break;
         case 1:
         {
+            system("cls");
             cout<<" 1- Lista de categorias"<<endl;
-            Archivo_Categoria ac;
-            ac.listar_categorias();
+            Archivo_Categoria archivo;
+            int cant=archivo.cantidad_categorias();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Proveedores Activos"<<endl<<endl;
+            }
+            else
+            {
+                archivo.listar_categorias();
+            }
+            system("pause");
 
         }
         break;

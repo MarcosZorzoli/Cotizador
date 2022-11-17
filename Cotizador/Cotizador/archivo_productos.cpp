@@ -16,7 +16,7 @@ bool archivo_productos::guardar(Productos producto, int posicion)
 {
   FILE* p;
   p = fopen("Producto.dat", "rb+");
-  if (p == NULL){
+  if (p == nullptr){
     std::cout<<"No se pudo abrir el archivo"<<std::endl;
   return false;
   }
@@ -133,19 +133,17 @@ void archivo_productos::modificar()
     std::cout<<std::endl;
     std::cin>>op;
 
-        while(op<0||op>cant)
+        producto=leer_de_disco(op-1);
+
+        while(op<0||op>cant||producto.getEstado()==false)
         {
             std::cout<<"ingrese una opcion correcta"<<std::endl;
             std::cin>>op;
         }
-        producto=leer_de_disco(op-1);
-        if(producto.getEstado()==false)
-        {
-            std::cout<<"ingrese una opcion correcta"<<std::endl;
-            std::cin>>op;
-        }else{
-    producto=leer_de_disco(op-1);
-    producto.Cargar();}
+       if(op!=0)
+       {
+          producto=leer_de_disco(op-1);
+    producto.Cargar();
 
      char op2;
         std::cout<<"esta seguro de que desea modificar al producto?"<<std::endl;
@@ -155,13 +153,15 @@ void archivo_productos::modificar()
         {
     guardar(producto, op-1);
         }
+       }
+
 }
 void archivo_productos::obtener_productos(Productos* prod, int cantidad)
 {
      FILE* pFile;
     pFile = fopen("Producto.dat", "rb");
 
-    if (pFile == NULL)
+    if (pFile == nullptr)
     {
         cout << "Error al abrir el archivo" << endl;
     }
@@ -183,9 +183,11 @@ void archivo_productos::listaXcategoria()
            cin>>cat;
             for(int i=0; i< cant_cat; i++)
             {
-                if(cat==prod[i].getId_Categoria())
+                if(cat==prod[i].getId_Categoria()&&prod[i].getEstado())
+                {
                 cout<<"----------------------"<<endl;
                 prod[i].Mostrar();
+                }
 
             }
             delete[] prod;

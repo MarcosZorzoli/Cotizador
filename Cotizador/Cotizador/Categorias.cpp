@@ -5,6 +5,14 @@
 #include <string>
 
 //gets
+
+categorias::categorias()
+{
+        Archivo_Categoria Archivo;
+        id_categoria=Archivo.cantidad_categorias()+1;
+        estado=true;
+}
+
 string categorias::getNombre()
 {
     return _nombre;
@@ -21,10 +29,10 @@ void categorias::setNombre(string nombre)
     strcpy(_nombre, nombre.c_str());
 }
 
-    void categorias::set_id(int nuevo_id)
-    {
-        id_categoria=nuevo_id;
-    }
+void categorias::set_id(int nuevo_id)
+{
+    id_categoria=nuevo_id;
+}
 void categorias::cargar() {
     Archivo_Categoria archi;
     categorias cat;
@@ -64,4 +72,13 @@ void categorias::sobreescribir_categoria(categorias c, int pos)
   fclose(pFile);
 
 
+}
+void categorias::setEstado(bool nEstado)
+    {
+        estado=nEstado;
+    }
+bool categorias::getEstado()
+{
+
+    return estado;
 }

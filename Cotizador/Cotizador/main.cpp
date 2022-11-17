@@ -36,7 +36,15 @@ int main()
         {
         case 0:
         {
+        char op2;
+        std::cout<<"Esta seguro de que desea salir del programa?"<<std::endl;
+        std::cout<<"[S/N]"<<std::endl;
+        std::cin>>op2;
+        if(op2=='s'||op2=='S')
+        {
             return false;
+
+        }
         }
         break;
         case 1:
