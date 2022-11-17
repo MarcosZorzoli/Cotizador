@@ -3,9 +3,10 @@
 #include "Menues.h"
 #include "Precios.h"
 #include "Categorias.h"
-#include "archivo_productos.h"
-#include "archivo_productos.h"
 #include "Productos.h"
+#include "archivo_Precios.h"
+#include "archivo_productos.h"
+#include "archivo_productos.h"
 
 using namespace std;
 int main()

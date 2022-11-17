@@ -1,64 +1,77 @@
-//#include "archivo_precios"
 #include "Precios.h"
+#include "archivo_Precios.h"
 #include <iostream>
 
-void Precios::setId(int ID){
+void Precios::setId(int ID)
+{
 id=ID;
 }
-void Precios::setPrecioU(float n_precio){
+void Precios::setId_Proveedor(int _id)
+{
+    id_proveedor=_id;
+}
+void Precios::setId_Producto(int _id)
+{
+    id_producto=_id;
+}
+void Precios::setPrecioU(float n_precio)
+{
 precioUnitario=n_precio;
 }
-void Precios::setUnidadMin(int UM){
+void Precios::setUnidadMin(int UM)
+{
 unidadMinima=UM;
 }
-void Precios::setNombreM(std::string Nombre){
+void Precios::setNombreMarca(std::string Nombre)
+{
 strcpy(nombre_marca,Nombre.c_str());
 }
-void Precios::setEstado(bool nEstado){
+void Precios::setEstado(bool nEstado)
+{
 estado=nEstado;
 }
-
-/*/
 Precios::Precios()
 {
-    archivo_Precios Archivo;
+    archivo_precios Archivo;
     id=Archivo.cantidad_de_registros()+1;
     estado=true;
-    precio = 0;
+    precioUnitario = 0;
     strcpy(nombre_marca, "");
-    id_categoria=0;
+    strcpy(nombre_produto, "");
+    id_producto=0;
+    id_proveedor=0;
 }
-
-/*/
 int Precios::getId()
 {
     return id;
 }
-
-void Precios::setId(int _id)
+int Precios::getId_Proveedor()
 {
-    id = _id;
+    return id_proveedor;
 }
-
+int Precios::getId_Producto()
+{
+    return id_producto;
+}
 float Precios::getPrecioU()
 {
     return precioUnitario;
 }
-
-void Precios::setPrecioU(float _precio)
+int Precios::getUnidadMin()
 {
-    precioUnitario = _precio;
+    return unidadMinima;
 }
-
-
-std::string Precios::getNombreM()
+std::string Precios::getNombreMarca()
 {
     return nombre_marca;
 }
-
-void Precios::setNombreM(std::string _nombre)
+std::string Precios::getNombreProd()
 {
-    strcpy(nombre_marca, _nombre.c_str());
+    return nombre_produto;
+}
+bool Precios::getEstado()
+{
+ return estado;
 }
 
 void Precios::cargar()
@@ -74,8 +87,13 @@ void Precios::cargar()
 }
 void Precios::mostrar()
 {
-    cout << "------------------" << endl;
-    cout << "------------------" << endl << endl;
+    std::cout<< "------------------"<<std::endl;
+    std::cout<<"Producto: "<<getNombreProd()<<std::endl;
+    std::cout<<"Marca: "<<getNombreMarca()<<std::endl;
+    std::cout<<"ID propio: "<<getId()<<std::endl;
+    std::cout<<"Cantidad por unidad: "<<getUnidadMin()<<std::endl;
+    std::cout<<"Valor de esa unidad: "<<getPrecioU()<<std::endl;
+    std::cout<< "------------------"<<std::endl<<std::endl;
 }
 
 

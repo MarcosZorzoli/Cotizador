@@ -7,7 +7,7 @@
 
 class Proveedores{
 
-protected:
+private:
 
     char nombre[50];
     int id;
