@@ -302,15 +302,16 @@ void Menu::menu_proveedores()
         cout<<"---Proveedores---"<<endl<<endl;
         cout<<" 1- Listar"<<endl;
         cout<<" 2- Agregar"<<endl;
-        cout<<" 3- Modificar"<<endl;
-        cout<<" 4- Eliminar"<<endl;
+        cout<<" 3- Registrar un precio"<<std::endl;
+        cout<<" 4- Modificar"<<endl;
+        cout<<" 5- Eliminar"<<endl;
         cout<<"-----------------"<<endl;
         cout<<" 0- SALIR"<<endl;
         cout<<"-----------------"<<endl;
 
         cin>>op;
 
-        while(op<0||op>4)
+        while(op<0||op>5)
         {
             cout<<"opcion incorrecta, vuelva a ingresar una opcion"<<endl;
             cin>>op;
@@ -356,13 +357,21 @@ void Menu::menu_proveedores()
         case 3:
         {
             system("cls");
+            cout<<"Cargar un Precio"<<endl<<endl;
+
+            system("pause");
+        }
+        break;
+        case 4:
+        {
+            system("cls");
             cout<<"Modificar Proveedor"<<endl<<endl;
             archivo_Proveedores archivo;
             archivo.modificar();
             system("pause");
         }
         break;
-        case 4:
+        case 5:
         {
             system("cls");
             cout<<"Eliminar Proveedor"<<endl<<endl;

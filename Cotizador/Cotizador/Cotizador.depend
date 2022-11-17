@@ -276,7 +276,7 @@
 	<iostream>
 	<cstring>
 
-1668664525 source:c:\users\tt\desktop\cotizador\cotizador\cotizador\cotizador\menues.cpp
+1668666211 source:c:\users\tt\desktop\cotizador\cotizador\cotizador\cotizador\menues.cpp
 	"Menues.h"
 	"Categorias.h"
 	"archivo_categorias.h"
@@ -287,11 +287,11 @@
 	<iostream>
 	<stdlib.h>
 
-1668631375 source:c:\users\tt\desktop\cotizador\cotizador\cotizador\cotizador\precios.cpp
+1668666565 source:c:\users\tt\desktop\cotizador\cotizador\cotizador\cotizador\precios.cpp
 	"Precios.h"
 	<iostream>
 
-1668631375 c:\users\tt\desktop\cotizador\cotizador\cotizador\cotizador\precios.h
+1668666385 c:\users\tt\desktop\cotizador\cotizador\cotizador\cotizador\precios.h
 	<iostream>
 	<cstring>
 	<string>

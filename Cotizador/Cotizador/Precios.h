@@ -10,29 +10,31 @@ class Precios
 {
 private:
     int id;
-    float precio;
+    float precioUnitario;
+    int unidadMinima;
     char nombre_marca[50];
     int id_categoria;
     int id_proveedor;
+    bool estado;
 public:
 
     Precios();
 
-    int get_id();
-    void set_id(int _id);
+    void setId(int ID);
+    void setPrecioU(float n_precio);
+    void setUnidadMin(int UM);
+    void setNombreM(std::string Nombre);
+    void setEstado(bool nEstado);
+    void setId_Categoria(int _id);
+    void setId_Proveedor(int id);
 
-    float get_precio();
-    void set_precio(float _precio);
-
-
-    string get_nombre();
-    void set_nombre(string _nombre);
-
-    int get_id_proveedor();
-    void set_id_proveedor(int id_proveedor);
-
-    int get_id_categoria();
-    void set_id_categoria(int id_categoria);
+    int getId();
+    float getPrecioU();
+    int getUnidadMin();
+    std::string getNombreM();
+    bool getEstado();
+    int getId_Proveedor();
+    int getId_Categoria();
 
     void cargar();
     void mostrar();

@@ -3,42 +3,66 @@
 #include <iostream>
 
 
+
+
+void setId(int ID);
+    void setPrecioU(float n_precio);
+    void setUnidadMin(int UM);
+    void setNombreM(std::string Nombre);
+    void setEstado(bool nEstado);
+    void setId_Categoria(int _id);
+    void setId_Proveedor(int id);
+
+    int setId();
+    float getPrecioU();
+    int getUnidadMin();
+    std::string getNombreM();
+    bool getEstado();
+    int getId_Proveedor();
+    int getId_Categoria();
+
+    void cargar();
+    void mostrar();
+
+/*/
 Precios::Precios()
 {
-    id = 0;
+    archivo_Precios Archivo;
+    id=Archivo.cantidad_de_registros()+1;
+    estado=true;
     precio = 0;
     strcpy(nombre_marca, "");
     id_proveedor=0;
     id_categoria=0;
 }
-
-int Precios::get_id()
+/*/
+int Precios::getId()
 {
     return id;
 }
 
-void Precios::set_id(int _id)
+void Precios::setId(int _id)
 {
     id = _id;
 }
 
-float Precios::get_precio()
+float Precios::getPrecioU()
 {
-    return precio;
+    return precioUnitario;
 }
 
-void Precios::set_precio(float _precio)
+void Precios::setPrecioU(float _precio)
 {
-    precio = _precio;
+    precioUnitario = _precio;
 }
 
 
-string Precios::get_nombre()
+std::string Precios::getNombreM()
 {
     return nombre_marca;
 }
 
-void Precios::set_nombre(string _nombre)
+void Precios::setNombreM(std::string _nombre)
 {
     strcpy(nombre_marca, _nombre.c_str());
 }
@@ -46,12 +70,11 @@ void Precios::set_nombre(string _nombre)
 void Precios::cargar()
 {
     //archivo_precios pre;
-    Precios _precio;
-    cout << "------------------" << endl;
-    cout << "Ingrese nombre: ";
-    cin >> nombre_marca;
-    cout << "Ingrese precio: ";
-    cin >> precio;
+    std::cout << "------------------" << std::endl;
+    std::cout << "Ingrese nombre: ";
+    std::cin >> nombre_marca;
+    std::cout << "Ingrese precio: ";
+    std::cin >> precioUnitario;
     //pre.guardar(productos);
 
 }
