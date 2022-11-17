@@ -6,7 +6,7 @@
 #include "Productos.h"
 #include "archivo_Precios.h"
 #include "archivo_productos.h"
-#include "archivo_productos.h"
+#include "archivo_Proveedores.h"
 
 using namespace std;
 int main()

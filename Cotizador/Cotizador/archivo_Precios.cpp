@@ -68,7 +68,7 @@ void archivo_precios::listar(int cantidad)
         Precio=leer_de_disco(i);
         if(Precio.getEstado())
         {std::cout<<"------------------"<<std::endl;
-        Precio.mostrar();
+        Precio.Mostrar();
         }
     }
 }
@@ -146,7 +146,7 @@ void archivo_precios::modificar()
             std::cin>>op;
         }else{
     Precio=leer_de_disco(op-1);
-    Precio.cargar();}
+    Precio.Cargar();}
 
      char op2;
         std::cout<<"esta seguro de que desea modificar el precio?"<<std::endl;

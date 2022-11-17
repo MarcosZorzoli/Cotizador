@@ -16,6 +16,7 @@ void menu_categorias();
 void menu_proveedores();
 void menu_porcentajes();
 void menu_informes();
+void menu_precios();
 };
 
 

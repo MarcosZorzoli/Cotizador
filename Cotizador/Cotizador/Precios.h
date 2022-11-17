@@ -39,8 +39,8 @@ public:
     bool getEstado();
 
 
-    void cargar();
-    void mostrar();
+    void Cargar();
+    void Mostrar();
 
 
 };

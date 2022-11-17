@@ -1,5 +1,6 @@
 #include "Menues.h"
 #include "Categorias.h"
+#include "archivo_Precios.h"
 #include "archivo_categorias.h"
 #include "archivo_productos.h"
 #include "archivo_Proveedores.h"
@@ -357,8 +358,7 @@ void Menu::menu_proveedores()
         case 3:
         {
             system("cls");
-            cout<<"Cargar un Precio"<<endl<<endl;
-
+menu_precios();
             system("pause");
         }
         break;
@@ -444,6 +444,91 @@ void Menu::menu_informes()
             cout<<"tercer informe"<<endl;
             system("pause");
         }
+        }
+    }
+
+}
+void Menu::menu_precios()
+{
+    int op;
+    bool menu_activo=true;
+    while(menu_activo)
+    {
+        system("cls");
+        cout<<"---Proveedores---"<<endl<<endl;
+        cout<<" 1- Listar"<<endl;
+        cout<<" 2- Agregar"<<endl;
+        cout<<" 3- Modificar"<<endl;
+        cout<<" 4- Eliminar"<<endl;
+        cout<<"-----------------"<<endl;
+        cout<<" 0- SALIR"<<endl;
+        cout<<"-----------------"<<endl;
+
+        cin>>op;
+
+        while(op<0||op>4)
+        {
+            cout<<"opcion incorrecta, vuelva a ingresar una opcion"<<endl;
+            cin>>op;
+        }
+        switch(op)
+        {
+        case 0:
+        {
+            menu_activo=false;
+        }
+        break;
+        case 1:
+        {
+
+            system("cls");
+            cout<<"Listar Precios"<<endl<<endl;
+            archivo_precios archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Precios Activos"<<endl<<endl;
+            }
+            else
+            {
+                archivo.listar(cant);
+            }
+            system("pause");
+        }
+        break;
+        case 2:
+        {
+            system("cls");
+            cout<<"Cargar Precio"<<endl<<endl;
+            Precios Precio;
+            Precio.Cargar();
+            archivo_precios archivo;
+            archivo.guardar(Precio);
+            Precio.Mostrar();
+            system("pause");
+        }
+        break;
+        case 3:
+        {
+            system("cls");
+            cout<<"Modificar Proveedor"<<endl<<endl;
+            archivo_precios archivo;
+            archivo.modificar();
+            system("pause");
+            }
+        break;
+        case 4:
+        {
+            system("cls");
+            cout<<"Eliminar Proveedor"<<endl<<endl;
+
+            archivo_precios archivo;
+            archivo.baja_Logica();
+            system("pause");
+        }
+        break;
+
         }
     }
 
