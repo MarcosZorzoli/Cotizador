@@ -6,16 +6,16 @@
 
 using namespace std;
 
-class Precios
+class Precios:public Proveedores
 {
 private:
     int id;
-    float precioUnitario;
-    int unidadMinima;
-    char nombre_marca[50];
     int id_categoria;
-    int id_proveedor;
+    int unidadMinima;
+    float precioUnitario;
+    char nombre_marca[50];
     bool estado;
+
 public:
 
     Precios();
@@ -26,14 +26,12 @@ public:
     void setNombreM(std::string Nombre);
     void setEstado(bool nEstado);
     void setId_Categoria(int _id);
-    void setId_Proveedor(int id);
 
     int getId();
     float getPrecioU();
     int getUnidadMin();
     std::string getNombreM();
     bool getEstado();
-    int getId_Proveedor();
     int getId_Categoria();
 
     void cargar();

@@ -4,9 +4,10 @@
 #include <string>
 #include <iostream>
 #include <cstring>
+
 class Proveedores{
 
-private:
+protected:
 
     char nombre[50];
     int id;

@@ -2,27 +2,21 @@
 #include "Precios.h"
 #include <iostream>
 
-
-
-
-void setId(int ID);
-    void setPrecioU(float n_precio);
-    void setUnidadMin(int UM);
-    void setNombreM(std::string Nombre);
-    void setEstado(bool nEstado);
-    void setId_Categoria(int _id);
-    void setId_Proveedor(int id);
-
-    int setId();
-    float getPrecioU();
-    int getUnidadMin();
-    std::string getNombreM();
-    bool getEstado();
-    int getId_Proveedor();
-    int getId_Categoria();
-
-    void cargar();
-    void mostrar();
+void Precios::setId(int ID){
+id=ID;
+}
+void Precios::setPrecioU(float n_precio){
+precioUnitario=n_precio;
+}
+void Precios::setUnidadMin(int UM){
+unidadMinima=UM;
+}
+void Precios::setNombreM(std::string Nombre){
+strcpy(nombre_marca,Nombre.c_str());
+}
+void Precios::setEstado(bool nEstado){
+estado=nEstado;
+}
 
 /*/
 Precios::Precios()
@@ -32,9 +26,9 @@ Precios::Precios()
     estado=true;
     precio = 0;
     strcpy(nombre_marca, "");
-    id_proveedor=0;
     id_categoria=0;
 }
+
 /*/
 int Precios::getId()
 {
@@ -71,9 +65,9 @@ void Precios::cargar()
 {
     //archivo_precios pre;
     std::cout << "------------------" << std::endl;
-    std::cout << "Ingrese nombre: ";
+    std::cout << "Ingrese la marca ofertada: ";
     std::cin >> nombre_marca;
-    std::cout << "Ingrese precio: ";
+    std::cout << "Ingrese el precio unitario: ";
     std::cin >> precioUnitario;
     //pre.guardar(productos);
 
@@ -83,6 +77,5 @@ void Precios::mostrar()
     cout << "------------------" << endl;
     cout << "------------------" << endl << endl;
 }
-
 
 

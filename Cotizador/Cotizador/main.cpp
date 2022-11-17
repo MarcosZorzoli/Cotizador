@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Menues.h"
-
+#include "Precios.h"
 #include "Categorias.h"
 #include "archivo_productos.h"
 #include "archivo_productos.h"
