@@ -103,7 +103,7 @@ bool Precios::getEstado()
             std::cin>>op;
         }else{
         Precio.setId_Producto(Producto.getId_Producto());
-        Precio.setNombreProd(Producto.getNombre());
+        //Precio.setNombreProd(Producto.getNombre());
         }
         char Nombre[50];
         std::cout<<"ingrese el nombre de la Marca ofertada"<<endl;
@@ -149,7 +149,7 @@ bool Precios::getEstado()
             cin>>Cantidadxunidad;
         }
         setUnidadMin(Cantidadxunidad);
-        setPrecioU(Precio);
+        setPrecioU(precio);
     }
 
     void Precios::Mostrar()

@@ -504,8 +504,8 @@ void Menu::menu_precios()
             Precios Precio;
             Precio.Cargar();
             archivo_precios archivo;
-            archivo.guardar(Precio);
             Precio.Mostrar();
+            archivo.guardar(Precio);
             system("pause");
         }
         break;
