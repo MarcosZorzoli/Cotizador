@@ -111,7 +111,9 @@ void Menu::menu_productos()
         break;
         case 1:
         {
-            while(menu_activo)
+            bool menu2activo=true;
+
+            while(menu2activo)
             {   system("cls");
             cout<<"Listar Productos"<<endl<<endl;;
 
@@ -126,6 +128,7 @@ void Menu::menu_productos()
                     cout<<"opcion incorrecta, vuelva a ingresar una opcion"<<endl;
                     cin>>op;
                 }
+
                 switch(op)
                 {
 
@@ -145,7 +148,6 @@ void Menu::menu_productos()
                 archivo.listar(cant);
             }
             system("pause");
-
 
                 }
 
@@ -171,12 +173,12 @@ void Menu::menu_productos()
                 break;
                 case 0:
                 {
-                    menu_activo=false;
+                    menu2activo=false;
                 }
                 }
 
         }
-                break;
+                }break;
 
         case 2:
         {
@@ -214,7 +216,7 @@ void Menu::menu_productos()
         }
     }
 }
-}
+
 void Menu::menu_categorias()
 {
     int op;
