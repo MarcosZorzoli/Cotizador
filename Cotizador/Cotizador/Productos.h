@@ -23,7 +23,8 @@ public:
     int getId_Producto();
     bool getEstado();
 
-    void Cargar();
+    bool Cargar();
+    void CargarCategoria();
     void Mostrar();
 };
 

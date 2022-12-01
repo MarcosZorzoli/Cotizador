@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 
-//gets
 
 categorias::categorias()
 {
@@ -34,14 +33,9 @@ void categorias::set_id(int nuevo_id)
     id_categoria=nuevo_id;
 }
 void categorias::cargar() {
-    Archivo_Categoria archi;
-    categorias cat;
     cout << "------------------" << endl;
     cout << "Ingrese nombre: ";
     cin >> _nombre;
-    cout << "Ingrese ID de categoria: ";
-    cin >>id_categoria;
-
 }
 void categorias::mostrar()
 {
@@ -49,7 +43,7 @@ void categorias::mostrar()
   cout << "------------------" << endl;
   cout << "ID de categoria: " << id_categoria << endl;
   cout << "Nombre: " << _nombre << endl;
-  cout << "------------------" << endl << endl;
+
 }
 void categorias::cargar_categias_vector(categorias vec[], int cantidad) {
   Archivo_Categoria ac;
