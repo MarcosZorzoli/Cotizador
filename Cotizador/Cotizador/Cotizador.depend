@@ -144,14 +144,14 @@
 	"Proveedores.h"
 	"archivo_Proveedores.h"
 
-1668716967 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\archivo_categorias.cpp
+1670325447 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\archivo_categorias.cpp
 	"archivo_categorias.h"
 	<iostream>
 
-1668716967 c:\users\nico2\documents\github\cotizador\cotizador\cotizador\archivo_categorias.h
+1670282322 c:\users\nico2\documents\github\cotizador\cotizador\cotizador\archivo_categorias.h
 	"Categorias.h"
 
-1668716967 c:\users\nico2\documents\github\cotizador\cotizador\cotizador\categorias.h
+1670282896 c:\users\nico2\documents\github\cotizador\cotizador\cotizador\categorias.h
 	<string>
 
 1668716967 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\archivo_productos.cpp
@@ -174,14 +174,14 @@
 	<iostream>
 	<cstring>
 
-1668716967 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\categorias.cpp
+1670282919 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\categorias.cpp
 	"Categorias.h"
 	"archivo_categorias.h"
 	"cstring"
 	<iostream>
 	<string>
 
-1668716967 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\main.cpp
+1669593818 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\main.cpp
 	<iostream>
 	<stdlib.h>
 	"Menues.h"
@@ -194,7 +194,7 @@
 
 1668716967 c:\users\nico2\documents\github\cotizador\cotizador\cotizador\menues.h
 
-1669071362 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\precios.cpp
+1670281710 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\precios.cpp
 	"Precios.h"
 	"archivo_Precios.h"
 	"Productos.h"
@@ -204,7 +204,8 @@
 	<string>
 	<cstdlib>
 
-1668725561 c:\users\nico2\documents\github\cotizador\cotizador\cotizador\precios.h
+1669595329 c:\users\nico2\documents\github\cotizador\cotizador\cotizador\precios.h
+	"Productos.h"
 	<iostream>
 	<cstring>
 	<string>
@@ -213,7 +214,7 @@
 	"Proveedores.h"
 	"archivo_Proveedores.h"
 
-1669071523 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\menues.cpp
+1670281900 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\menues.cpp
 	"Menues.h"
 	"Categorias.h"
 	"archivo_Precios.h"
@@ -335,7 +336,7 @@
 	"archivo_Precios.h"
 	"Precios.h"
 
-1668716967 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\archivo_precios.cpp
+1669593841 source:c:\users\nico2\documents\github\cotizador\cotizador\cotizador\archivo_precios.cpp
 	"archivo_Precios.h"
 	"Precios.h"
 

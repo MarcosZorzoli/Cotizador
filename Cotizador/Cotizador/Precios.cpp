@@ -7,7 +7,7 @@
 #include <string>
 #include <cstdlib>
 
-
+using namespace std;
 void Precios::setId(int ID)
 {
 id=ID;
@@ -30,7 +30,7 @@ unidadMinima=UM;
 }
 void Precios::setNombreMarca(std::string Nombre)
 {
-strcpy(nombre_marca,Nombre.c_str());
+    strcpy(nombre_marca,Nombre.c_str());
 }
 void Precios::setEstado(bool nEstado)
 {
@@ -88,6 +88,7 @@ bool Precios::getEstado()
         archivo_productos archivoPROD;
         int cant=archivoPROD.cantidad_de_registros();
         archivoPROD.listar(cant);
+        Productos prod;
         int op;
         std::cout<<"Ingrese el ID del Producto al cual desea asignarle un precio: "<<std::endl;
         std::cin>>op;
@@ -101,22 +102,25 @@ bool Precios::getEstado()
         {
             std::cout<<"ingrese una opcion correcta"<<std::endl;
             std::cin>>op;
-        }else{
-        Precio.setId_Producto(Producto.getId_Producto());
-        //Precio.setNombreProd(Producto.getNombre());
+        }else if (op==prod.getId_Producto())
+        {
+        Precio.setId_Producto(prod.getId_Producto());
+       //Precio.setNombreProd(prod.getNombre());
         }
         char Nombre[50];
         std::cout<<"ingrese el nombre de la Marca ofertada"<<endl;
         std::cin.ignore();
         std::cin>>Nombre;
         Precio.setNombreMarca(Nombre);
-
+archivo_precios arp;
+arp.guardar(Precio,op-1);
         Proveedores Proveedor;
         archivo_Proveedores archivoPROV;
         int cantidad=archivoPROV.cantidad_de_registros();
         archivoPROV.listar(cantidad);
         int op2;
         std::cout<<"Ingrese el ID del Proveedor que cotizo el precio: "<<std::endl;
+        std::cin>>op2;
         while(op2<0||op2>cantidad)
         {
             std::cout<<"ingrese una opcion correcta"<<std::endl;
@@ -143,6 +147,7 @@ bool Precios::getEstado()
                 std::cout<<"Ingrese la cantidad de unidades del producto, equivalente al precio>";
        int Cantidadxunidad;
        std::cin>>Cantidadxunidad;
+       archivo_precios arPre;
         while(precio<0)
         {
             std::cout<<"Ingrese una opcion correcta"<<std::endl;
@@ -150,15 +155,16 @@ bool Precios::getEstado()
         }
         setUnidadMin(Cantidadxunidad);
         setPrecioU(precio);
+        arPre.guardar(Precio,op-1);
     }
 
-    void Precios::Mostrar()
+    void Precios::Mostrar(Precios pre)
     {
-        std::cout<<"-Nombre del Producto: "<<getNombreProd()<<std::endl;
-        std::cout<<"-Marca ofertada: "<<getNombreMarca()<<std::endl;
-        std::cout<<"-#ID: "<<getId()<<std::endl;
-        std::cout<<"-Cantidad x unidad: "<<getUnidadMin()<<std::endl;
-        std::cout<<"-Valor: $"<<getPrecioU()<<std::endl;
+        std::cout<<"-Nombre del Producto: "<<pre.getNombreProd()<<std::endl;
+        std::cout<<"-Marca ofertada: "<<pre.getNombreMarca()<<std::endl;
+        std::cout<<"-#ID: "<<pre.getId()<<std::endl;
+        std::cout<<"-Cantidad x unidad: "<<pre.getUnidadMin()<<std::endl;
+        std::cout<<"-Valor: $"<<pre.getPrecioU()<<std::endl;
 
     }
 

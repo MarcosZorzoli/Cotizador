@@ -287,6 +287,8 @@ void Menu::menu_categorias()
         {
             system("cls");
             cout<<" 4- Eliminar categoria"<<endl;
+            Archivo_Categoria cat;
+            cat.baja_Logica();
             system("pause");
         }
         break;
@@ -457,7 +459,7 @@ void Menu::menu_precios()
     while(menu_activo)
     {
         system("cls");
-        cout<<"---Proveedores---"<<endl<<endl;
+        cout<<"---Precios---"<<endl<<endl;
         cout<<" 1- Listar"<<endl;
         cout<<" 2- Agregar"<<endl;
         cout<<" 3- Modificar"<<endl;
@@ -506,7 +508,7 @@ void Menu::menu_precios()
             Precios Precio;
             Precio.Cargar();
             archivo_precios archivo;
-            Precio.Mostrar();
+            Precio.Mostrar(Precio);
             archivo.guardar(Precio);
             system("pause");
         }

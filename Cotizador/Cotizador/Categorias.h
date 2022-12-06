@@ -23,7 +23,6 @@ public:
     void set_id(int nuevo_id);
     void setNombre(string n_nombre);
     void setEstado(bool n_estado);
-
     void cargar();
     void mostrar();
     void cargar_categias_vector(categorias vec[], int cantidad);

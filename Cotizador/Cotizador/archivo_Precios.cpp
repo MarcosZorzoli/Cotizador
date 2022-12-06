@@ -68,7 +68,7 @@ void archivo_precios::listar(int cantidad)
         Precio=leer_de_disco(i);
         if(Precio.getEstado())
         {std::cout<<"------------------"<<std::endl;
-        Precio.Mostrar();
+        Precio.Mostrar(Precio);
         }
     }
 }

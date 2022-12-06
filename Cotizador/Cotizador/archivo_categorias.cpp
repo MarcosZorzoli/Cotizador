@@ -2,6 +2,55 @@
 #include <iostream>
 using namespace std;
 
+void Archivo_Categoria::baja_Logica()
+{       int op;
+        categorias cat;
+
+        int cant=cantidad_categorias();
+        listar_categorias();
+    std::cout<<std::endl;
+    std::cout<<"Ingrese de ID de categoria que desea eliminar"<<std::endl;
+    std::cout<<std::endl;
+    std::cin>>op;
+        while(op<0||op>cant)
+        {
+            std::cout<<"ingrese una opcion correcta"<<std::endl;
+            std::cin>>op;
+        }
+        cat=leer_categorias(op-1);
+        if(cat.getEstado()==false)
+        {
+            std::cout<<"ingrese una opcion correcta"<<std::endl;
+            std::cin>>op;
+        }else{
+
+        char op2;
+        std::cout<<"esta seguro de que desea eliminar al producto?"<<std::endl;
+        std::cout<<"[S/N]"<<std::endl;
+        std::cin>>op2;
+        if(op2=='s'||op2=='S')
+        {
+
+        cat.setEstado(false);
+        guardar_Categorias(cat , op-1);
+        }
+}
+}
+bool Archivo_Categoria::guardar_Categorias(categorias cat, int posicion)
+{
+  FILE* p;
+  p = fopen("categoria.dat", "rb+");
+  if (p == nullptr){
+    std::cout<<"No se pudo abrir el archivo"<<std::endl;
+  return false;
+  }
+  fseek(p, posicion * sizeof(categorias), SEEK_SET);
+  fwrite(&cat, sizeof(categorias), 1, p);
+  fclose(p);
+
+  return true;
+}
+
 void Archivo_Categoria::guardar(categorias cat)
 {
 

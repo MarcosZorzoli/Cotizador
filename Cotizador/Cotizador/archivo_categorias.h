@@ -14,10 +14,11 @@ public:
 int buscarCategoria(int ID);
 int get_cantidad_Activa(int cantidad);
 categorias leer_de_disco(int posicion);
-
+void baja_Logica();
 void listar_categorias();
 void modificar_categorias();
 void agregar_categoria();
+bool guardar_Categorias(categorias cat, int posicion);
 };
 
 

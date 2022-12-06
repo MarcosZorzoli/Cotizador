@@ -1,5 +1,6 @@
 #ifndef PRECIOS_H_INCLUDED
 #define PRECIOS_H_INCLUDED
+#include "Productos.h"
 #include <iostream>
 #include <cstring>
 #include <string>
@@ -40,7 +41,7 @@ public:
 
 
     void Cargar();
-    void Mostrar();
+    void Mostrar(Precios pre);
 
 
 };
