@@ -187,8 +187,10 @@ void Archivo_Categoria::listar_categorias()
 
             for(int i=0; i< cant_cat; i++)
             {
-                cout<<"----------------------"<<endl;
+                if(cat[i].getEstado())
+                {
                 cat[i].mostrar();
+                }
 
             }
             delete[] cat;

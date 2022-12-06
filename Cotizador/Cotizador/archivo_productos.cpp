@@ -1,4 +1,5 @@
 #include "archivo_productos.h"
+#include "archivo_categorias.h"
 #include <iostream>
 
 void archivo_productos::guardar(Productos producto)
@@ -178,18 +179,25 @@ void archivo_productos::listaXcategoria()
             Productos* prod= new Productos[cant_cat];
 
             archivo.obtener_productos(prod,cant_cat);
+            Archivo_Categoria Categorias;
+            Categorias.listar_categorias();
             int cat;
-           cout<<"ingrese la categoria a listar: "<<endl;
+           cout<<"ingrese el ID# de la Categoria a listar: "<<endl;
            cin>>cat;
+           system("cls");
+            cout<<"Productos con ID# de Categoria: "<<cat<<endl<<endl;
+
             for(int i=0; i< cant_cat; i++)
             {
                 if(cat==prod[i].getId_Categoria()&&prod[i].getEstado())
                 {
-                cout<<"----------------------"<<endl;
+                cout<<"-----------------"<<endl;
                 prod[i].Mostrar();
                 }
 
             }
+            cout<<endl;
+
             delete[] prod;
 }
 

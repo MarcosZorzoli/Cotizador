@@ -185,11 +185,15 @@ void Menu::menu_productos()
             system("cls");
             cout<<" 2- Agregar producto"<<endl;
             Productos producto;
-            producto.Cargar();
+            bool leyo=producto.Cargar();
+            if(leyo)
+            {
             archivo_productos archivo;
             archivo.guardar(producto);
             producto.Mostrar();
             system("pause");
+
+            }
 
 
         }
@@ -197,20 +201,42 @@ void Menu::menu_productos()
         case 3:
         {
             system("cls");
+
+            archivo_productos archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Productos Activos"<<endl<<endl;
+                system("pause");
+
+            }else{
+            system("cls");
             cout<<" 3-Modificar producto"<<endl;
            archivo_productos archivo;
             archivo.modificar();
             system("pause");
+            }
+
         }
         break;
         case 4:
         {
             system("cls");
+                        archivo_productos archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Productos Activos"<<endl<<endl;
+                system("pause");
+
+            }else{
             cout<<" 4- Eliminar producto"<<endl;
              archivo_productos archivo;
             archivo.baja_Logica();
             system("pause");
-        }
+        }}
         break;
 
         }
@@ -256,11 +282,12 @@ void Menu::menu_categorias()
             int cantActiva=archivo.get_cantidad_Activa(cant);
             if (cantActiva==0)
             {
-                cout<<"No se encuentran guardados Proveedores Activos"<<endl<<endl;
+                cout<<"No se encuentran guardadas categorias Activas"<<endl<<endl;
             }
             else
             {
                 archivo.listar_categorias();
+                cout<<endl<<endl;
             }
             system("pause");
 

@@ -1,5 +1,6 @@
 #include "archivo_productos.h"
 #include "Productos.h"
+#include "archivo_categorias.h"
 
 Productos::Productos()
     {
@@ -46,13 +47,45 @@ Productos::Productos()
         return estado;
     }
 
-    void Productos::Cargar()
-    {
+    bool Productos::Cargar()
+    {   Archivo_Categoria arch;
+        if(arch.cantidad_categorias()>0){
         std::string Nombre;
         std::cout<<"Ingrese el nombre del Producto: "<<std::endl;
         std::cin.ignore();
         getline(std::cin,Nombre);
         setNombre(Nombre);
+        CargarCategoria();
+        return true;
+        }else{
+        std::cout<<"Primero deben haber Categorias activas"<<std::endl;
+            return false;}
+    }
+
+    void Productos::CargarCategoria()
+    {
+        int op;
+        Archivo_Categoria ArchivoC;
+        int cant=ArchivoC.cantidad_categorias();
+        ArchivoC.listar_categorias();
+    std::cout<<std::endl;
+    std::cout<<"Ingrese de ID de la categoria a..."<<std::endl;
+    std::cout<<" ...la que pertenece el producto"<<std::endl;
+    std::cout<<std::endl;
+    std::cin>>op;
+
+
+
+        while(op<0||op>cant||getEstado()==false)
+        {
+            std::cout<<"ingrese una opcion correcta"<<std::endl;
+            std::cin>>op;
+        }
+       if(op!=0)
+       {
+        setId_Categoria(op);
+       }
+
     }
 
     void Productos::Mostrar()
