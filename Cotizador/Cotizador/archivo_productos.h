@@ -19,8 +19,7 @@ void guardar(Productos producto);
     void modificar();
     void obtener_productos(Productos* prod, int cantidad);
     void listaXcategoria();
-
-
+    bool Existe(int opcion);
 
 };
 

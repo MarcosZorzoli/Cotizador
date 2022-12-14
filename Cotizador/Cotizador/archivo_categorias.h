@@ -19,6 +19,7 @@ void listar_categorias();
 void modificar_categorias();
 void agregar_categoria();
 bool guardar_Categorias(categorias cat, int posicion);
+bool Existe(int opcion);
 };
 
 

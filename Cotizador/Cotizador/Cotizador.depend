@@ -349,7 +349,7 @@
 	"archivo_categorias.h"
 	<iostream>
 
-1671003990 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_categorias.h
+1671006821 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_categorias.h
 	"Categorias.h"
 
 1671003990 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\categorias.h
@@ -375,7 +375,7 @@
 	"archivo_categorias.h"
 	<iostream>
 
-1669749246 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.h
+1671006821 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.h
 	"Productos.h"
 
 1669861622 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\productos.h
@@ -439,7 +439,7 @@
 	<string>
 	<cstdlib>
 
-1669861660 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\productos.cpp
+1671006766 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\productos.cpp
 	"archivo_productos.h"
 	"Productos.h"
 	"archivo_categorias.h"

@@ -254,5 +254,19 @@ int Archivo_Categoria::get_cantidad_Activa(int cantidad)
     }
     return contador;
 }
+bool Archivo_Categoria::Existe(int op)
+{
+    categorias cat;
+    for(int i=0;i<cantidad_categorias();i++)
+    {
+    cat=leer_de_disco(i);
+      if(cat.get_id()==op)
+      {
+       return true;
+      }
 
+    }
+    return false;
+
+}
 

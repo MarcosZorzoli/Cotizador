@@ -74,7 +74,7 @@ Productos::Productos()
     std::cout<<std::endl;
     std::cin>>op;
 
-        while(op<0||op>cant||getEstado()==false)
+        while(ArchivoC.Existe(op)==false)
         {
             std::cout<<"ingrese una opcion correcta"<<std::endl;
             std::cin>>op;

@@ -201,7 +201,21 @@ void archivo_productos::listaXcategoria()
             delete[] prod;
 }
 
+bool archivo_productos::Existe(int op)
+{
+    Productos prod;
+    for(int i=0;i<cantidad_de_registros();i++)
+    {
+    prod=leer_de_disco(i);
+      if(prod.get_id()==op)
+      {
+       return true;
+      }
 
+    }
+    return false;
+
+}
 
 
 
