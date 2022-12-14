@@ -203,8 +203,9 @@ void Archivo_Categoria::modificar_categorias()
             categorias* cat= new categorias[cant_cat];
 
             ac.obtener_categorias(cat,cant_cat);
+            ac.listar_categorias();
             int cod;
-            cout<<"ingresar codigo a modificar"<<endl;
+            cout<<endl<<"ingresar codigo a modificar"<<endl;
             cin>>cod;
             for(int i=0; i< cant_cat; i++)
             {
@@ -214,8 +215,7 @@ void Archivo_Categoria::modificar_categorias()
                     system("pause");
                     int nuevo_cod;
                     char nuevo_nombre[30];
-                    cout<<"ingresar nuevo codigo"<<endl;
-                    cin>>nuevo_cod;
+                    nuevo_cod=cod;
                     cout<<"ingresar nuevo nombre"<<endl;
                     cin>>nuevo_nombre;
                     cat[i].setNombre(nuevo_nombre);
@@ -235,6 +235,9 @@ void Archivo_Categoria::agregar_categoria()
 
             cat.cargar();
             ac.guardar(cat);
+            cat.mostrar();
+            cout<<endl;
+            system("pause");
 }
 
 int Archivo_Categoria::get_cantidad_Activa(int cantidad)

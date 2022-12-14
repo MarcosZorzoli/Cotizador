@@ -192,6 +192,7 @@ void Menu::menu_productos()
             archivo.guardar(producto);
             producto.Mostrar();
             system("pause");
+            cout<<endl;
 
             }
 

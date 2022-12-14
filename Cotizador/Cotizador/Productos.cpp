@@ -50,12 +50,12 @@ Productos::Productos()
     bool Productos::Cargar()
     {   Archivo_Categoria arch;
         if(arch.cantidad_categorias()>0){
+        CargarCategoria();
         std::string Nombre;
         std::cout<<"Ingrese el nombre del Producto: "<<std::endl;
         std::cin.ignore();
         getline(std::cin,Nombre);
         setNombre(Nombre);
-        CargarCategoria();
         return true;
         }else{
         std::cout<<"Primero deben haber Categorias activas"<<std::endl;
@@ -73,8 +73,6 @@ Productos::Productos()
     std::cout<<" ...la que pertenece el producto"<<std::endl;
     std::cout<<std::endl;
     std::cin>>op;
-
-
 
         while(op<0||op>cant||getEstado()==false)
         {

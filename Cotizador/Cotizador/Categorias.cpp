@@ -61,7 +61,7 @@ void categorias::sobreescribir_categoria(categorias c, int pos)
   }
 
   fseek(pFile,pos*sizeof (categorias),0);
-  bool ok= fwrite(this, sizeof(categorias),1,pFile);
+  fwrite(this, sizeof(categorias),1,pFile);
 
   fclose(pFile);
 
