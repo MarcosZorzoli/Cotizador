@@ -7,6 +7,8 @@
 #include "archivo_Precios.h"
 #include "archivo_productos.h"
 #include "archivo_Proveedores.h"
+#include "archivo_categorias.h"
+
 
 using namespace std;
 int main()
@@ -17,11 +19,11 @@ int main()
         system("cls");
         cout<<"----Cotizador----"<<endl<<endl;
         cout<<" 1- Cotizar"<<endl;
-        cout<<" 2- Productos"<<endl;
-        cout<<" 3- Categorias"<<endl;
+        cout<<" 2- Categorias"<<endl;
+        cout<<" 3- Productos"<<endl;
         cout<<" 4- Proveedores"<<endl;
-        cout<<" 5- Porcentajes"<<endl;
-        cout<<" 6- Informes"<<endl;
+        cout<<" 5- //Porcentajes"<<endl;
+        cout<<" 6- //Informes"<<endl;
         cout<<"-----------------"<<endl;
         cout<<" 0- SALIR"<<endl;
         cout<<"-----------------"<<endl;
@@ -51,8 +53,37 @@ int main()
         case 1:
         {
             system("cls");
+            Archivo_Categoria aC;
+            archivo_productos aProd;
+            archivo_Proveedores aProv;
+            archivo_precios aPrec;
+            bool puede=true;
+            if(aC.cantidad_categorias()==0)
+            {
+            std::cout<<"Primero necesita crear una Categoria"<<std::endl;
+                     puede=false;
+            }
+            if(aProd.cantidad_de_registros()==0)
+            {
+            std::cout<<"Primero necesita crear un Producto"<<std::endl;
+            puede=false;
+            }
+            if(aProv.cantidad_de_registros()==0)
+            {
+            std::cout<<"Primero necesita cargar un Proveedor"<<std::endl;
+                     puede=false;
+            }
+            if(aPrec.cantidad_de_registros()==0)
+            {
+            std::cout<<"Primero necesita cargar un Precio dentro del menu Proveedores"<<std::endl;
+                     puede=false;
+            }
+            if(puede)
+            {
             Menu menu;
             menu.menu_cotizar();
+            }
+
             system("pause");
         }
         break;
@@ -61,8 +92,9 @@ int main()
             system("cls");
 
             Menu menu;
-             menu.menu_productos();
+            menu.menu_categorias();
             system("pause");
+
         }
         break;
         case 3:
@@ -70,7 +102,7 @@ int main()
             system("cls");
 
             Menu menu;
-            menu.menu_categorias();
+             menu.menu_productos();
             system("pause");
         }
         break;

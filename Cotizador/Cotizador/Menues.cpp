@@ -335,9 +335,10 @@ void Menu::menu_proveedores()
         cout<<"---Proveedores---"<<endl<<endl;
         cout<<" 1- Listar"<<endl;
         cout<<" 2- Agregar"<<endl;
-        cout<<" 3- Registrar un precio"<<std::endl;
-        cout<<" 4- Modificar"<<endl;
-        cout<<" 5- Eliminar"<<endl;
+        cout<<" 3- Modificar"<<endl;
+        cout<<" 4- Eliminar"<<endl;
+        cout<<" 5- Menú de precios"<<std::endl;
+
         cout<<"-----------------"<<endl;
         cout<<" 0- SALIR"<<endl;
         cout<<"-----------------"<<endl;
@@ -389,27 +390,28 @@ void Menu::menu_proveedores()
         break;
         case 3:
         {
-            system("cls");
-menu_precios();
-            system("pause");
-        }
-        break;
-        case 4:
-        {
-            system("cls");
+           system("cls");
             cout<<"Modificar Proveedor"<<endl<<endl;
             archivo_Proveedores archivo;
             archivo.modificar();
             system("pause");
         }
         break;
-        case 5:
+        case 4:
         {
-            system("cls");
+             system("cls");
             cout<<"Eliminar Proveedor"<<endl<<endl;
 
             archivo_Proveedores archivo;
             archivo.baja_Logica();
+            system("pause");
+        }
+        break;
+        case 5:
+        {
+
+                        system("cls");
+menu_precios();
             system("pause");
         }
         break;
