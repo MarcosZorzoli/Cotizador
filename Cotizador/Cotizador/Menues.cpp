@@ -337,7 +337,7 @@ void Menu::menu_proveedores()
         cout<<" 2- Agregar"<<endl;
         cout<<" 3- Modificar"<<endl;
         cout<<" 4- Eliminar"<<endl;
-        cout<<" 5- Menú de precios"<<std::endl;
+        cout<<" 5- Menu de precios"<<std::endl;
 
         cout<<"-----------------"<<endl;
         cout<<" 0- SALIR"<<endl;

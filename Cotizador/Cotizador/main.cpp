@@ -4,6 +4,8 @@
 #include "Precios.h"
 #include "Categorias.h"
 #include "Productos.h"
+#include "Cotizacion.h"
+#include "archivo_Cotizacion.h"
 #include "archivo_Precios.h"
 #include "archivo_productos.h"
 #include "archivo_Proveedores.h"

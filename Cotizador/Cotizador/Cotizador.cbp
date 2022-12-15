@@ -34,6 +34,8 @@
 		</Compiler>
 		<Unit filename="Categorias.cpp" />
 		<Unit filename="Categorias.h" />
+		<Unit filename="Cotizacion.cpp" />
+		<Unit filename="Cotizacion.h" />
 		<Unit filename="Menues.cpp" />
 		<Unit filename="Menues.h" />
 		<Unit filename="Precios.cpp" />
@@ -42,6 +44,8 @@
 		<Unit filename="Productos.h" />
 		<Unit filename="Proveedores.cpp" />
 		<Unit filename="Proveedores.h" />
+		<Unit filename="archivo_Cotizacion.cpp" />
+		<Unit filename="archivo_Cotizacion.h" />
 		<Unit filename="archivo_Precios.cpp" />
 		<Unit filename="archivo_Precios.h" />
 		<Unit filename="archivo_Proveedores.cpp" />
