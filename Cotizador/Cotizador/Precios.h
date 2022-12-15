@@ -14,7 +14,8 @@ private:
     int unidadMinima;
     float precioUnitario;
     char nombre_marca[50];
-    char nombre_produto[50];
+    char nombre_producto[50];
+    char nombre_proveedor[50];
     bool estado;
 
 public:
@@ -28,6 +29,7 @@ public:
     void setUnidadMin(int UM);
     void setNombreMarca(std::string Nombre);
     void setNombreProd(std::string Nombre);
+    void setNombreProv(std::string Nombre);
     void setEstado(bool nEstado);
 
     int getId();
@@ -37,6 +39,7 @@ public:
     int getUnidadMin();
     std::string getNombreMarca();
     std::string getNombreProd();
+    std::string getNombreProv();
     bool getEstado();
 
 

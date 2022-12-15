@@ -345,7 +345,7 @@
 	<iostream>
 	<fstream>
 
-1671005457 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_categorias.cpp
+1671006954 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_categorias.cpp
 	"archivo_categorias.h"
 	<iostream>
 
@@ -355,7 +355,7 @@
 1671003990 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\categorias.h
 	<string>
 
-1671003990 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_precios.cpp
+1671131561 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_precios.cpp
 	"archivo_Precios.h"
 	"Precios.h"
 
@@ -364,18 +364,18 @@
 	<iostream>
 	<fstream>
 
-1671003990 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\precios.h
+1671130969 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\precios.h
 	"Productos.h"
 	<iostream>
 	<cstring>
 	<string>
 
-1669855167 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.cpp
+1671007225 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.cpp
 	"archivo_productos.h"
 	"archivo_categorias.h"
 	<iostream>
 
-1671006821 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.h
+1671007225 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.h
 	"Productos.h"
 
 1669861622 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\productos.h
@@ -417,7 +417,7 @@
 
 1669749246 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.h
 
-1671006039 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.cpp
+1671131797 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.cpp
 	"Menues.h"
 	"Categorias.h"
 	"archivo_Precios.h"
@@ -429,7 +429,7 @@
 	<iostream>
 	<stdlib.h>
 
-1671003990 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\precios.cpp
+1671131951 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\precios.cpp
 	"Precios.h"
 	"archivo_Precios.h"
 	"Productos.h"

@@ -15,9 +15,10 @@ void archivo_precios::guardar(Precios Precio)
 }
 bool archivo_precios::guardar(Precios Precio, int posicion)
 {
+
   FILE* p;
   p = fopen("Precios.dat", "rb+");
-  if (p == NULL){
+  if (p == nullptr){
     std::cout<<"No se pudo abrir el archivo"<<std::endl;
   return false;
   }
@@ -130,7 +131,7 @@ void archivo_precios::modificar()
         int cant=cantidad_de_registros();
         listar(cant);
     std::cout<<std::endl;
-    std::cout<<"Ingrese de ID del producto que desea modificar"<<std::endl;
+    std::cout<<"Ingrese de ID del precio que desea modificar"<<std::endl;
     std::cout<<std::endl;
     std::cin>>op;
 
@@ -145,7 +146,6 @@ void archivo_precios::modificar()
             std::cout<<"ingrese una opcion correcta"<<std::endl;
             std::cin>>op;
         }else{
-    Precio=leer_de_disco(op-1);
     Precio.Cargar();}
 
      char op2;
