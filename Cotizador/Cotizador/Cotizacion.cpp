@@ -139,7 +139,7 @@ bool Cotizacion::getEstado()
             std::cin>>op;
         }
         categorias cat;
-            cat=archivoC.leer_de_disco(op);
+            cat=archivoC.leer_de_disco(op-1);
 
             if(cat.getEstado()==false)
         {
@@ -148,7 +148,6 @@ bool Cotizacion::getEstado()
         }else if (op==cat.get_id())
         {
         system("cls");
-
         Cotiza.setId_Categoria(cat.get_id());
         }
         Productos prod;
@@ -156,7 +155,8 @@ bool Cotizacion::getEstado()
         int canti=archivoProd.cantidad_de_registros();
         for(int y=0;y<canti;y++)
         {
-            if(prod.getEstado()&&prod.getId_Categoria()==getId_Categoria())
+            prod=archivoProd.leer_de_disco(y);
+            if(prod.getEstado()&&prod.getId_Categoria()==Cotiza.getId_Categoria())
             {
                 prod.Mostrar();
             }
@@ -166,7 +166,7 @@ bool Cotizacion::getEstado()
         std::cout<<"Ingrese el Id del producto a cotizar"<<std::endl;
         cin>>op2;
         prod=archivoProd.leer_de_disco(op2-1);
-        while(prod.getId_Categoria()!=getId_Categoria())
+        while(prod.getId_Categoria()!=Cotiza.getId_Categoria())
         {
             std::cout<<"Ingresa una opcion correcta"<<std::endl;
             cin>>op2;
@@ -181,10 +181,12 @@ bool Cotizacion::getEstado()
         Precios Prec;
 int can=archivoPrec.cantidad_de_registros();
         for(int a=0;a<can;a++)
-        {Prec=archivoPrec.leer_de_disco(a);
-            if(Prec.getEstado()&&Prec.getId_Producto()==getId_Producto())
+        {
+            Prec=archivoPrec.leer_de_disco(a);
+            if(Prec.getEstado()&&Prec.getId_Producto()==Cotiza.getId_Producto())
             {
-                prod.Mostrar();
+                Prec.Mostrar(Prec);
+                std::cout<<std::endl;
             }
         }
         int op3;
@@ -193,7 +195,7 @@ int can=archivoPrec.cantidad_de_registros();
         cin>>op3;
 
         Prec=archivoPrec.leer_de_disco(op3-1);
-        while(Prec.getId_Producto()!=getId_Producto())
+        while(Prec.getId_Producto()!=Cotiza.getId_Producto())
         {
             std::cout<<"Ingresa una opcion correcta"<<std::endl;
             cin>>op3;
@@ -208,7 +210,7 @@ int can=archivoPrec.cantidad_de_registros();
         Cotiza.setUnidadMin(Prec.getUnidadMin());
         Cotiza.setPrecioU(Prec.getPrecioU());
         int cantidad;
-        std::cout<<"Ingrese la cantidad que desea Cotizar de ese Producto con ese Precio"<<std::endl;
+        std::cout<<"Ingrese la cantidad que desea Cotizar de ese Producto con el Precio elegido"<<std::endl;
         cin>>cantidad;
         while(cantidad<=0)
         {
@@ -216,9 +218,11 @@ int can=archivoPrec.cantidad_de_registros();
         cin>>cantidad;
         }
         Cotiza.setCantCompra(cantidad);
-        std::cout<<"Total compra= $"<<getCantCompra()*getPrecioU()<<std::endl;
+        std::cout<<"Total compra= $"<<Cotiza.getCantCompra()*Cotiza.getPrecioU()<<std::endl;
         archivo_cotizacion archivoCOT;
         archivoCOT.guardar(Cotiza);
+        system("cls");
+        Cotiza.Mostrar(Cotiza);
         }
 
     void Cotizacion::Mostrar(Cotizacion Cot)

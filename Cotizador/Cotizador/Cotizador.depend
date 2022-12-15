@@ -420,7 +420,7 @@
 
 1669749246 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.h
 
-1671137684 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.cpp
+1671140937 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.cpp
 	"Menues.h"
 	"Categorias.h"
 	"archivo_Precios.h"
@@ -429,6 +429,8 @@
 	"archivo_Proveedores.h"
 	"Proveedores.h"
 	"Productos.h"
+	"Cotizacion.h"
+	"archivo_Cotizacion.h"
 	<iostream>
 	<stdlib.h>
 
@@ -548,7 +550,7 @@
 	"Proveedores.h"
 	"archivo_Proveedores.h"
 
-1671135432 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_cotizacion.cpp
+1671139202 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_cotizacion.cpp
 	"Cotizacion.h"
 	"archivo_Cotizacion.h"
 
@@ -557,12 +559,12 @@
 	<cstring>
 	<string>
 
-1671135432 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_cotizacion.h
+1671139211 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_cotizacion.h
 	"Cotizacion.h"
 	<iostream>
 	<fstream>
 
-1671138459 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\cotizacion.cpp
+1671140772 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\cotizacion.cpp
 	"Cotizacion.h"
 	"archivo_Cotizacion.h"
 	"Precios.h"

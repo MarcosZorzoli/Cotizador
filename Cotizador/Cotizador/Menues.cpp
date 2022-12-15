@@ -6,6 +6,8 @@
 #include "archivo_Proveedores.h"
 #include "Proveedores.h"
 #include "Productos.h"
+#include "Cotizacion.h"
+#include "archivo_Cotizacion.h"
 #include <iostream>
 #include <stdlib.h>
 
@@ -20,19 +22,17 @@ void Menu::menu_cotizar()
 
         system("cls");
 
-        cout<<"-----Cotizar----- paso 1"<<endl<<endl;
-        cout<<"Elegi una Categoria o crea una"<<endl<<endl;
-        cout<<" 1-Crear categoria"<<endl<<endl;
-        cout<<" 2 Ferreteria"<<endl;
-        cout<<" 3 Almacen"<<endl;
-        cout<<" 4 Otra categoria en un vec dinamico"<<endl;
+        cout<<"-----Cotizar-----"<<endl<<endl;
+        cout<<" 1-Cotizar"<<endl;
+        cout<<" 2 Listar"<<endl;
+        cout<<" 3 Eliminar"<<endl;
         cout<<"-----------------"<<endl;
         cout<<" 0- volver"<<endl;
         cout<<"-----------------"<<endl;
 
         cin>>op;
 
-        while(op<0||op>4)
+        while(op<0||op>3)
         {
             cout<<"opcion incorrecta, vuelva a ingresar una opcion"<<endl;
             cin>>op;
@@ -48,35 +48,42 @@ void Menu::menu_cotizar()
         case 1:
         {
             system("cls");
-            cout<<" 1 -  categoria"<<endl;
-            //despues hago que esta opcion sea la letra "N", asi las categorias creadas se listan desde el 1
+            Cotizacion Cotiza;
+            Cotiza.Cargar();
+                //despues hago que esta opcion sea la letra "N", asi las categorias creadas se listan desde el 1
             system("pause");
         }
         break;
         case 2:
         {
             system("cls");
-            cout<<" 2- Ferreteria"<<endl;
-            system("pause");
+                archivo_cotizacion archivo;
+                archivo.listar(archivo.cantidad_de_registros());
+                system("pause");
         }
         break;
         case 3:
         {
             system("cls");
-            cout<<" 3- Almacen"<<endl;
-            system("pause");
-        }
-        break;
-        case 4:
-        {
+            archivo_cotizacion archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Cotizaciones Activos"<<endl<<endl;
+                system("pause");
+
+            }else{
             system("cls");
-            cout<<" 4 - Otro producto de un vec dinamico"<<endl;
-            system("pause");
+                archivo_cotizacion archivo;
+                archivo.baja_Logica();
+                system("pause");
         }
         break;
         }
 
     }
+}
 }
 
 void Menu::menu_productos()
