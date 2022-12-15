@@ -218,6 +218,7 @@ int can=archivoPrec.cantidad_de_registros();
         cin>>cantidad;
         }
         Cotiza.setCantCompra(cantidad);
+        std::cout<<"Cantidad comprada= "<<Cotiza.getCantCompra()*Cotiza.getUnidadMin()<<std::endl;
         std::cout<<"Total compra= $"<<Cotiza.getCantCompra()*Cotiza.getPrecioU()<<std::endl;
         archivo_cotizacion archivoCOT;
         archivoCOT.guardar(Cotiza);
@@ -228,14 +229,15 @@ int can=archivoPrec.cantidad_de_registros();
     void Cotizacion::Mostrar(Cotizacion Cot)
     {
         std::cout<<std::endl;
+        std::cout<<"-#ID: "<<Cot.getId()<<std::endl;
         std::cout<<"-Nombre del Producto: "<<Cot.getNombreProd()<<std::endl;
         std::cout<<"-Marca ofertada: "<<Cot.getNombreMarca()<<std::endl;
         std::cout<<"-Nombre proveedor: "<<Cot.getNombreProv()<<std::endl;
-        std::cout<<"-#ID: "<<Cot.getId()<<std::endl;
         std::cout<<"-Cantidad x unidad: "<<Cot.getUnidadMin()<<std::endl;
         std::cout<<"-Precio Unitario: $"<<Cot.getPrecioU()<<std::endl;
-        std::cout<<"-Cantidad comprada: "<<Cot.getCantCompra()<<std::endl;
+        std::cout<<"-Cantidad Total comprada: "<<Cot.getCantCompra()*Cot.getUnidadMin()<<std::endl;
         std::cout<<"-Total Compra: $"<<Cot.getCantCompra()*Cot.getPrecioU()<<std::endl;
+        std::cout<<"---------------------------"<<std::endl;
 
     }
 
