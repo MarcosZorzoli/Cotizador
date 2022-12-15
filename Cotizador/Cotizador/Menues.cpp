@@ -57,10 +57,19 @@ void Menu::menu_cotizar()
         case 2:
         {
             system("cls");
+            archivo_cotizacion archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardadas Cotizaciones Activas"<<endl<<endl;
+                system("pause");
+
+            }else{
                 archivo_cotizacion archivo;
                 archivo.listar(archivo.cantidad_de_registros());
                 system("pause");
-        }
+        }}
         break;
         case 3:
         {
@@ -70,7 +79,7 @@ void Menu::menu_cotizar()
             int cantActiva=archivo.get_cantidad_Activa(cant);
             if (cantActiva==0)
             {
-                cout<<"No se encuentran guardados Cotizaciones Activos"<<endl<<endl;
+                cout<<"No se encuentran guardadas Cotizaciones Activas"<<endl<<endl;
                 system("pause");
 
             }else{
@@ -553,21 +562,44 @@ void Menu::menu_precios()
         case 3:
         {
             system("cls");
-            cout<<"Modificar Proveedor"<<endl<<endl;
+            archivo_precios archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Precios Activos"<<endl<<endl;
+                        system("pause");
+
+            }
+            else
+            {
+            cout<<"Modificar Precio"<<endl<<endl;
             archivo_precios archivo;
             archivo.modificar();
             system("pause");
             }
+        }
         break;
         case 4:
-        {
+            {
+
             system("cls");
-            cout<<"Eliminar Proveedor"<<endl<<endl;
+             archivo_precios archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Precios Activos"<<endl<<endl;
+            }
+            else
+            {
+            cout<<"Eliminar Precio"<<endl<<endl;
 
             archivo_precios archivo;
             archivo.baja_Logica();
-            system("pause");
         }
+        system("pause");
+            }
         break;
 
         }
