@@ -10,7 +10,7 @@
 #include "archivo_Cotizacion.h"
 #include <iostream>
 #include <stdlib.h>
-
+#include "Informes.h"
 
 void Menu::menu_cotizar()
 {
@@ -333,7 +333,6 @@ void Menu::menu_categorias()
             cout<<" 4- Eliminar categoria"<<endl;
             Archivo_Categoria cat;
             cat.baja_Logica();
-            system("pause");
         }
         break;
 
@@ -437,13 +436,6 @@ menu_precios();
 }
 
 
-void Menu::menu_porcentajes()
-{
-
-
-
-}
-
 void Menu::menu_informes()
 {
     int op;
@@ -453,16 +445,14 @@ void Menu::menu_informes()
     {
         system("cls");
         cout<<"----Informes----"<<endl<<endl;
-        cout<<" 1- Porcentajes mas utilizados"<<endl;
-        cout<<" 2- Mayor porcentaje de descuento"<<endl;
-        cout<<" 3- Mayor porcentaje de aumento"<<endl;
+        cout<<" 1- Producto mas cotizado"<<endl;
         cout<<"-----------------"<<endl;
         cout<<" 0- SALIR"<<endl;
         cout<<"-----------------"<<endl;
 
         cin>>op;
 
-        while(op<0||op>3)
+        while(op<0||op>1)
         {
             cout<<"opcion incorrecta, vuelva a ingresar una opcion"<<endl;
             cin>>op;
@@ -477,27 +467,17 @@ void Menu::menu_informes()
         case 1:
         {
             system("cls");
-            cout<<"primer informe"<<endl;
+            cout<<"Producto mas cotizado"<<endl;
+            ProdMasCot();
             system("pause");
         }
         break;
-        case 2:
-        {
-            system("cls");
-            cout<<"segundo informe"<<endl;
-            system("pause");
-        }
-        break;
-        case 3:
-        {
-            system("cls");
-            cout<<"tercer informe"<<endl;
-            system("pause");
-        }
+
         }
     }
 
 }
+
 void Menu::menu_precios()
 {
     int op;

@@ -3,39 +3,41 @@
 using namespace std;
 
 void Archivo_Categoria::baja_Logica()
-{       int op;
-        categorias cat;
+{
+            categorias c;
+            int cant_cat= cantidad_categorias();
+            categorias* cat= new categorias[cant_cat];
 
-        int cant=cantidad_categorias();
-        listar_categorias();
-    std::cout<<std::endl;
-    std::cout<<"Ingrese de ID de categoria que desea eliminar"<<std::endl;
-    std::cout<<std::endl;
-    std::cin>>op;
-        while(op<0||op>cant)
-        {
-            std::cout<<"ingrese una opcion correcta"<<std::endl;
-            std::cin>>op;
-        }
-        cat=leer_categorias(op-1);
-        if(cat.getEstado()==false)
-        {
-            std::cout<<"ingrese una opcion correcta"<<std::endl;
-            std::cin>>op;
-        }else{
-
-        char op2;
-        std::cout<<"esta seguro de que desea eliminar al producto?"<<std::endl;
+            obtener_categorias(cat,cant_cat);
+            listar_categorias();
+            int cod;
+            cout<<endl<<"ingresar el codigo de la Categoria a eliminar"<<endl;
+            cin>>cod;
+            for(int i=0; i< cant_cat; i++)
+            {
+                if(cod==cat[i].get_id())
+                {
+                           char op2;
+        std::cout<<"esta seguro de que desea eliminar la Categoria?"<<std::endl;
         std::cout<<"[S/N]"<<std::endl;
         std::cin>>op2;
         if(op2=='s'||op2=='S')
         {
-
-        cat.setEstado(false);
-        guardar_Categorias(cat , op-1);
+  cat[i].setEstado(false);
+                    cat[i].sobreescribir_categoria(c,i);
+                    delete [] cat;
+                      system("pause");
+        } else {
+                            delete [] cat;
+                      break;
         }
+
+
+                }
+            }
+
 }
-}
+
 bool Archivo_Categoria::guardar_Categorias(categorias cat, int posicion)
 {
   FILE* p;
@@ -213,19 +215,16 @@ void Archivo_Categoria::modificar_categorias()
                 {
                     cat[i].mostrar();
                     system("pause");
-                    int nuevo_cod;
                     char nuevo_nombre[30];
-                    nuevo_cod=cod;
                     cout<<"ingresar nuevo nombre"<<endl;
                     cin>>nuevo_nombre;
                     cat[i].setNombre(nuevo_nombre);
-                    cat[i].set_id(nuevo_cod);
-                    cat[i].mostrar();
                     system("pause");
                     cat[i].sobreescribir_categoria(c,i);
+                    delete [] cat;
                 }
             }
-            delete [] cat;
+
 }
 void Archivo_Categoria::agregar_categoria()
 {
