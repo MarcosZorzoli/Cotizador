@@ -404,7 +404,7 @@
 	<iostream>
 	<string>
 
-1676581210 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\main.cpp
+1676581788 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\main.cpp
 	<iostream>
 	<stdlib.h>
 	"Menues.h"
@@ -420,7 +420,7 @@
 
 1669749246 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.h
 
-1676581009 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.cpp
+1676583796 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.cpp
 	"Menues.h"
 	"Categorias.h"
 	"archivo_Precios.h"
@@ -578,7 +578,7 @@
 	<string>
 	<cstdlib>
 
-1676580975 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\informes.h
+1676584686 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\informes.h
 	"archivo_productos.h"
 	"Productos.h"
 	"archivo_Cotizacion.h"

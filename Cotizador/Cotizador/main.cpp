@@ -118,29 +118,11 @@ int main()
         case 5:
         {
             system("cls");
-            Archivo_Categoria aC;
-            archivo_productos aProd;
-            archivo_Proveedores aProv;
-            archivo_precios aPrec;
+            archivo_cotizacion aC;
             bool puede=true;
-            if(aC.cantidad_categorias()==0)
+            if(aC.cantidad_de_registros()==0)
             {
-            std::cout<<"Primero necesita crear una Categoria"<<std::endl;
-                     puede=false;
-            }
-            if(aProd.cantidad_de_registros()==0)
-            {
-            std::cout<<"Primero necesita crear un Producto"<<std::endl;
-            puede=false;
-            }
-            if(aProv.cantidad_de_registros()==0)
-            {
-            std::cout<<"Primero necesita cargar un Proveedor"<<std::endl;
-                     puede=false;
-            }
-            if(aPrec.cantidad_de_registros()==0)
-            {
-            std::cout<<"Primero necesita cargar un Precio dentro del menu Proveedores"<<std::endl;
+            std::cout<<"Primero necesita Cotizar"<<std::endl;
                      puede=false;
             }
             if(puede)

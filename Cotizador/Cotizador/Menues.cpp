@@ -446,13 +446,15 @@ void Menu::menu_informes()
         system("cls");
         cout<<"----Informes----"<<endl<<endl;
         cout<<" 1- Producto mas cotizado"<<endl;
+        cout<<" 2- Cotizacion de mayor importe"<<endl;
+        cout<<" 3- Categoria mas cotizada"<<endl;
         cout<<"-----------------"<<endl;
         cout<<" 0- SALIR"<<endl;
         cout<<"-----------------"<<endl;
 
         cin>>op;
 
-        while(op<0||op>1)
+        while(op<0||op>3)
         {
             cout<<"opcion incorrecta, vuelva a ingresar una opcion"<<endl;
             cin>>op;
@@ -467,8 +469,29 @@ void Menu::menu_informes()
         case 1:
         {
             system("cls");
-            cout<<"Producto mas cotizado"<<endl;
+            cout<<"Producto mas cotizado"<<endl<<endl;
+
             ProdMasCot();
+            cout<<endl;
+            system("pause");
+        }
+        break;
+                case 2:
+        {
+            system("cls");
+            cout<<"Cotizacion de mayor importe"<<endl<<endl;
+            CotMaxImp();
+            cout<<endl;
+            system("pause");
+        }
+        break;
+                case 3:
+        {
+            system("cls");
+            cout<<"Categoria mas cotizada"<<endl<<endl;
+
+            CatMasCot();
+            cout<<endl;
             system("pause");
         }
         break;
