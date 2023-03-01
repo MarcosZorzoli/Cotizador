@@ -183,7 +183,6 @@ while(pos<acot.cantidad_de_registros())
     pos++;
        }
     }
-        pos++;
 
     }
     pos++;
