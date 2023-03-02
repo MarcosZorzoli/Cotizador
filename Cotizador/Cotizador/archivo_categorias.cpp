@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void Archivo_Categoria::baja_Logica()
+/*/void Archivo_Categoria::baja_Logica()
 {
             categorias c;
             int cant_cat= cantidad_categorias();
@@ -17,14 +17,14 @@ void Archivo_Categoria::baja_Logica()
             {
                 if(cod==cat[i].get_id())
                 {
-        std::cout<<"Si elimina la Categoria se borrará/n el/los siguiente/s producto/s y los precios asociados"<<std::endl;
+        std::cout<<"Si elimina la Categoria se borrara/n el/los siguiente/s producto/s y sus precios asociados"<<std::endl;
         Productos prod;
         archivo_productos aprod;
         int pos=0;
         while(pos<aprod.cantidad_de_registros())
         {
             prod=aprod.leer_de_disco(pos);
-            if(prod.getId_Categoria()==cod)
+            if(prod.getId_Categoria()==cod&&prod.getEstado())
             {
                 prod.mostrar();
                 std::cout<<std::endl;
@@ -34,7 +34,7 @@ void Archivo_Categoria::baja_Logica()
             }
         }
 
-                           char op2;
+        char op2;
         std::cout<<"esta seguro de que desea eliminar la Categoria?"<<std::endl;
         std::cout<<"[S/N]"<<std::endl;
         std::cin>>op2;
@@ -46,27 +46,23 @@ void Archivo_Categoria::baja_Logica()
                     delete [] cat;
         int idproducto;
         int posicion=0;
+
         while(posicion<aprod.cantidad_de_registros())
         {
             prod=aprod.leer_de_disco(posicion);
-            if(prod.getId_Categoria()==cod)
+            if(prod.getId_Categoria()==cod&&prod.getEstado())
             {
                 idproducto=prod.getId_Producto();
                 aprod.baja_Logica(cod);
-                std::cout<<std::endl;
-                posicion++;
-            }else{
-            posicion++;
-            }
-        }
-        archivo_precios aprecios;
-        Precios precio;
-             int posi=0;
+
+                archivo_precios aprecios;
+                Precios precio;
+                int posi=0;
 
         while(posi<aprecios.cantidad_de_registros())
         {
             precio=aprecios.leer_de_disco(posi);
-            if(precio.getId_Producto()==idproducto)
+            if(precio.getId_Producto()==idproducto&&precio.getEstado())
             {
                 aprecios.baja_Logica(idproducto);
                 std::cout<<std::endl;
@@ -74,6 +70,16 @@ void Archivo_Categoria::baja_Logica()
             }else{
             posi++;
             }
+        posi++;
+        }
+                std::cout<<std::endl;
+                posicion++;
+
+
+            }else{
+            posicion++;
+            }
+            posicion++;
         }
 
 
@@ -88,6 +94,86 @@ void Archivo_Categoria::baja_Logica()
             }
 
 }
+/*/
+
+
+void Archivo_Categoria::baja_Logica()
+{
+            categorias c;
+            int cant_cat= cantidad_categorias();
+            categorias* cat= new categorias[cant_cat];
+
+            obtener_categorias(cat,cant_cat);
+            listar_categorias();
+            int cod;
+            cout<<endl<<"ingresar el codigo de la Categoria a eliminar"<<endl;
+            cin>>cod;
+            for(int i=0; i< cant_cat; i++)
+            {
+                Productos prod;
+        archivo_productos aprod;
+                if(cod==cat[i].get_id())
+                {
+        std::cout<<"Si elimina la Categoria se borrara/n el/los siguiente/s producto/s y sus precios asociados"<<std::endl;
+
+        int pos=0;
+        while(pos<aprod.cantidad_de_registros())
+        {
+            prod=aprod.leer_de_disco(pos);
+            if(prod.get_id()==cod&&prod.getEstado())
+            {
+                prod.mostrar();
+                std::cout<<std::endl;
+                pos++;
+            }else{
+            pos++;
+            }
+        }
+
+        char op2;
+        std::cout<<"esta seguro de que desea eliminar la Categoria?"<<std::endl;
+        std::cout<<"[S/N]"<<std::endl;
+        std::cin>>op2;
+        if(op2=='s'||op2=='S')
+        {
+
+                    cat[i].setEstado(false);
+                    cat[i].sobreescribir_categoria(c,i);
+                    delete [] cat;
+       int posi=0;
+        while(posi<aprod.cantidad_de_registros())
+        {
+            prod=aprod.leer_de_disco(posi);
+            if(prod.getId_Categoria()==cod&&prod.getEstado())
+            {
+                Precios precio;
+                archivo_precios aprec;
+                int posicion=0;
+                while(posicion<aprec.cantidad_de_registros())
+                {
+                    precio=aprec.leer_de_disco(posicion);
+                    if(precio.getId_Producto()==prod.getId_Producto()&&precio.getEstado())
+                    {
+                        aprec.baja_Logica(precio.getId());
+                        posicion++;
+
+                    }else{
+                    posicion++;}
+                }
+
+                aprod.baja_Logica(prod.get_id());
+                std::cout<<std::endl;
+                posi++;
+            }else{
+            posi++;
+            }
+        }
+
+        }else{
+            delete [] cat;
+        }
+        }}
+        }
 
 bool Archivo_Categoria::guardar_Categorias(categorias cat, int posicion)
 {
@@ -232,11 +318,11 @@ int Archivo_Categoria::buscarCategoria(int ID){
 }
 void Archivo_Categoria::listar_categorias()
 {
-    Archivo_Categoria ac;
-            int cant_cat= ac.cantidad_categorias();
+
+            int cant_cat= cantidad_categorias();
             categorias* cat= new categorias[cant_cat];
 
-            ac.obtener_categorias(cat,cant_cat);
+            obtener_categorias(cat,cant_cat);
 
             for(int i=0; i< cant_cat; i++)
             {

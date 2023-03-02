@@ -22,7 +22,7 @@ void Menu::menu_cotizar()
 
         system("cls");
 
-        cout<<"-----Cotizar-----"<<endl<<endl;
+        cout<<"-----Cotizaciones-----"<<endl<<endl;
         cout<<" 1-Cotizar"<<endl;
         cout<<" 2 Listar"<<endl;
         cout<<" 3 Eliminar"<<endl;
@@ -300,13 +300,16 @@ void Menu::menu_categorias()
             if (cantActiva==0)
             {
                 cout<<"No se encuentran guardadas categorias Activas"<<endl<<endl;
+                            system("pause");
+
             }
             else
             {
                 archivo.listar_categorias();
                 cout<<endl<<endl;
+                                            system("pause");
+
             }
-            system("pause");
 
         }
         break;
@@ -329,11 +332,12 @@ void Menu::menu_categorias()
             if (cantActiva==0)
             {
                 cout<<"No se encuentran guardadas categorias Activas"<<endl<<endl;
+                                    system("pause");
+
             }
             else{
             archivo.modificar_categorias();
         }
-                    system("pause");
 
         }
         break;
@@ -347,11 +351,12 @@ void Menu::menu_categorias()
             if (cantActiva==0)
             {
                 cout<<"No se encuentran guardadas categorias Activas"<<endl<<endl;
+                                    system("pause");
+
             }
             else{
             archivo.baja_Logica();
         }
-                    system("pause");
 
         }
         break;

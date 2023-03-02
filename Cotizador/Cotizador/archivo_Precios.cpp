@@ -127,10 +127,20 @@ void archivo_precios::baja_Logica()
 void archivo_precios::baja_Logica(int idprod)
 {
         Precios Precio;
-        Precio=leer_de_disco(idprod-1);
-
+        int i=0;
+        while(i<cantidad_de_registros())
+        {
+        Precio=leer_de_disco(i);
+        if(Precio.getId_Producto()==idprod)
+        {
         Precio.setEstado(false);
         guardar(Precio, idprod-1);
+        break;
+        }else{
+        i++;
+        }
+        }
+
 }
 
 
@@ -156,7 +166,7 @@ void archivo_precios::modificar()
             std::cout<<"ingrese una opcion correcta"<<std::endl;
             std::cin>>op;
         }else{
-    Precio.Cargar();}
+    Precio.Cargar(Precio.getId());}
 
      char op2;
         std::cout<<"esta seguro de que desea modificar el precio?"<<std::endl;

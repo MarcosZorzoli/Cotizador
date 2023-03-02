@@ -345,7 +345,7 @@
 	<iostream>
 	<fstream>
 
-1677766409 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_categorias.cpp
+1677785228 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_categorias.cpp
 	"archivo_categorias.h"
 	<iostream>
 
@@ -359,7 +359,7 @@
 1671003990 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\categorias.h
 	<string>
 
-1677762111 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_precios.cpp
+1677782638 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_precios.cpp
 	"archivo_Precios.h"
 	"Precios.h"
 
@@ -368,13 +368,13 @@
 	<iostream>
 	<fstream>
 
-1671130969 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\precios.h
+1677768905 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\precios.h
 	"Productos.h"
 	<iostream>
 	<cstring>
 	<string>
 
-1677761247 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.cpp
+1677784925 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.cpp
 	"archivo_productos.h"
 	"archivo_categorias.h"
 	<iostream>
@@ -408,7 +408,7 @@
 	<iostream>
 	<string>
 
-1677756305 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\main.cpp
+1677773566 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\main.cpp
 	<iostream>
 	<stdlib.h>
 	"Menues.h"
@@ -424,7 +424,7 @@
 
 1669749246 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.h
 
-1677766925 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.cpp
+1677773566 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\menues.cpp
 	"Menues.h"
 	"Categorias.h"
 	"archivo_Precios.h"
@@ -439,7 +439,7 @@
 	<stdlib.h>
 	"Informes.h"
 
-1671131951 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\precios.cpp
+1677768975 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\precios.cpp
 	"Precios.h"
 	"archivo_Precios.h"
 	"Productos.h"
@@ -570,7 +570,7 @@
 	<iostream>
 	<fstream>
 
-1677757856 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\cotizacion.cpp
+1677783076 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\cotizacion.cpp
 	"Cotizacion.h"
 	"archivo_Cotizacion.h"
 	"Precios.h"
@@ -592,4 +592,155 @@
 1677757209 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\tiempo.h
 	<iostream>
 	<ctime>
+
+1677785228 source:c:\users\tt\desktop\archivos de prueba\archivo_categorias.cpp
+	"archivo_categorias.h"
+	<iostream>
+
+1677762111 c:\users\tt\desktop\archivos de prueba\archivo_categorias.h
+	"Categorias.h"
+	"Productos.h"
+	"archivo_productos.h"
+	"Precios.h"
+	"archivo_Precios.h"
+
+1671003990 c:\users\tt\desktop\archivos de prueba\categorias.h
+	<string>
+
+1669861622 c:\users\tt\desktop\archivos de prueba\productos.h
+	"Categorias.h"
+	<string>
+	<iostream>
+	<cstring>
+
+1677761289 c:\users\tt\desktop\archivos de prueba\archivo_productos.h
+	"Productos.h"
+
+1677768905 c:\users\tt\desktop\archivos de prueba\precios.h
+	"Productos.h"
+	<iostream>
+	<cstring>
+	<string>
+
+1677762111 c:\users\tt\desktop\archivos de prueba\archivo_precios.h
+	"Precios.h"
+	<iostream>
+	<fstream>
+
+1671139202 source:c:\users\tt\desktop\archivos de prueba\archivo_cotizacion.cpp
+	"Cotizacion.h"
+	"archivo_Cotizacion.h"
+
+1677696645 c:\users\tt\desktop\archivos de prueba\cotizacion.h
+	<iostream>
+	<cstring>
+	<string>
+	"Tiempo.h"
+
+1677757209 c:\users\tt\desktop\archivos de prueba\tiempo.h
+	<iostream>
+	<ctime>
+
+1671139211 c:\users\tt\desktop\archivos de prueba\archivo_cotizacion.h
+	"Cotizacion.h"
+	<iostream>
+	<fstream>
+
+1677782638 source:c:\users\tt\desktop\archivos de prueba\archivo_precios.cpp
+	"archivo_Precios.h"
+	"Precios.h"
+
+1677786418 source:c:\users\tt\desktop\archivos de prueba\archivo_productos.cpp
+	"archivo_productos.h"
+	"archivo_categorias.h"
+	<iostream>
+
+1669749246 source:c:\users\tt\desktop\archivos de prueba\archivo_proveedores.cpp
+	"archivo_Proveedores.h"
+
+1669749246 c:\users\tt\desktop\archivos de prueba\archivo_proveedores.h
+	"Proveedores.h"
+	<iostream>
+	<fstream>
+
+1669749246 c:\users\tt\desktop\archivos de prueba\proveedores.h
+	<string>
+	<iostream>
+	<cstring>
+
+1671004509 source:c:\users\tt\desktop\archivos de prueba\categorias.cpp
+	"Categorias.h"
+	"archivo_categorias.h"
+	"cstring"
+	<iostream>
+	<string>
+
+1677783076 source:c:\users\tt\desktop\archivos de prueba\cotizacion.cpp
+	"Cotizacion.h"
+	"archivo_Cotizacion.h"
+	"Precios.h"
+	"archivo_Precios.h"
+	"Categorias.h"
+	"archivo_categorias.h"
+	"Productos.h"
+	"archivo_productos.h"
+	<iostream>
+	<string>
+	<cstdlib>
+
+1677773566 source:c:\users\tt\desktop\archivos de prueba\main.cpp
+	<iostream>
+	<stdlib.h>
+	"Menues.h"
+	"Precios.h"
+	"Categorias.h"
+	"Productos.h"
+	"Cotizacion.h"
+	"archivo_Cotizacion.h"
+	"archivo_Precios.h"
+	"archivo_productos.h"
+	"archivo_Proveedores.h"
+	"archivo_categorias.h"
+
+1669749246 c:\users\tt\desktop\archivos de prueba\menues.h
+
+1677773566 source:c:\users\tt\desktop\archivos de prueba\menues.cpp
+	"Menues.h"
+	"Categorias.h"
+	"archivo_Precios.h"
+	"archivo_categorias.h"
+	"archivo_productos.h"
+	"archivo_Proveedores.h"
+	"Proveedores.h"
+	"Productos.h"
+	"Cotizacion.h"
+	"archivo_Cotizacion.h"
+	<iostream>
+	<stdlib.h>
+	"Informes.h"
+
+1677765616 c:\users\tt\desktop\archivos de prueba\informes.h
+	"archivo_productos.h"
+	"Productos.h"
+	"archivo_Cotizacion.h"
+	"Cotizacion.h"
+
+1677768975 source:c:\users\tt\desktop\archivos de prueba\precios.cpp
+	"Precios.h"
+	"archivo_Precios.h"
+	"Productos.h"
+	"archivo_productos.h"
+	"archivo_Proveedores.h"
+	<iostream>
+	<string>
+	<cstdlib>
+
+1677761316 source:c:\users\tt\desktop\archivos de prueba\productos.cpp
+	"archivo_productos.h"
+	"Productos.h"
+	"archivo_categorias.h"
+
+1669749246 source:c:\users\tt\desktop\archivos de prueba\proveedores.cpp
+	"Proveedores.h"
+	"archivo_Proveedores.h"
 

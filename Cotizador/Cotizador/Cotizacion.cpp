@@ -153,11 +153,14 @@ return fregistro;
         categorias cat;
             cat=archivoC.leer_de_disco(op-1);
 
-            if(cat.getEstado()==false)
+            while(cat.getEstado()==false)
         {
             std::cout<<"ingrese una opcion correcta"<<std::endl;
             std::cin>>op;
-        }else if (op==cat.get_id())
+            cat=archivoC.leer_de_disco(op-1);
+
+
+        }  if(op==cat.get_id())
         {
         system("cls");
         Cotiza.setId_Categoria(cat.get_id());

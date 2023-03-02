@@ -44,6 +44,7 @@ public:
 
 
     void Cargar();
+    void Cargar(int idPrecio);
     void Mostrar(Precios pre);
 
 

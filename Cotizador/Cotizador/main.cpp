@@ -20,7 +20,7 @@ int main()
     {
         system("cls");
         cout<<"----Cotizador----"<<endl<<endl;
-        cout<<" 1- Cotizar"<<endl;
+        cout<<" 1- Cotizaciones"<<endl;
         cout<<" 2- Categorias"<<endl;
         cout<<" 3- Productos"<<endl;
         cout<<" 4- Proveedores"<<endl;

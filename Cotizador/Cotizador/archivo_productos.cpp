@@ -125,11 +125,21 @@ void archivo_productos::baja_Logica()
 
 void archivo_productos::baja_Logica(int id)
 {
-        Productos producto;
-        producto=leer_de_disco(id-1);
 
-        producto.setEstado(false);
-        guardar(producto, id-1);
+       Productos Producto;
+        int i=0;
+        while(i<cantidad_de_registros())
+        {
+        Producto=leer_de_disco(i);
+        if(Producto.getId_Producto()==id)
+        {
+        Producto.setEstado(false);
+        guardar(Producto, id-1);
+        break;
+        }else{
+        i++;
+        }
+        }
 
 }
 
@@ -183,22 +193,33 @@ void archivo_productos::obtener_productos(Productos* prod, int cantidad)
 }
 void archivo_productos::listaXcategoria()
 {
-     archivo_productos archivo;
 
-            int cant_cat= archivo.cantidad_de_registros();
-            Productos* prod= new Productos[cant_cat];
+            int cant= cantidad_de_registros();
+            Productos* prod= new Productos[cant];
 
-            archivo.obtener_productos(prod,cant_cat);
+            obtener_productos(prod,cant);
+            categorias Cat;
             Archivo_Categoria Categorias;
             Categorias.listar_categorias();
             int cat;
            cout<<"ingrese el ID# de la Categoria a listar: "<<endl;
            cin>>cat;
-           system("cls");
+           Cat=Categorias.leer_de_disco(cat-1);
+           while(Cat.getEstado()!=true)
+           {
+            cout<<"ID# de Categoria invalido: "<<endl;
+            cout<<"ingrese el ID# de la Categoria a listar: "<<endl;
+           cin>>cat;
+        Cat=Categorias.leer_de_disco(cat-1);
+
+           }
+            system("cls");
+
             cout<<"Productos con ID# de Categoria: "<<cat<<endl<<endl;
 
-            for(int i=0; i< cant_cat; i++)
+            for(int i=0; i< cant; i++)
             {
+
                 if(cat==prod[i].getId_Categoria()&&prod[i].getEstado())
                 {
                 cout<<"-----------------"<<endl;

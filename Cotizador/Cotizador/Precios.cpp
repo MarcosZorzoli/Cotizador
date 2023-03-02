@@ -168,6 +168,64 @@ bool Precios::getEstado()
         std::cout<<std::endl;
     }
 
+    void Precios::Cargar(int idPrecio)
+    {
+        Productos Producto;
+        archivo_productos archivoPROD;
+
+        Producto=archivoPROD.leer_de_disco(idPrecio-1);
+
+        setId_Producto(Producto.getId_Producto());
+        setNombreProd(Producto.getNombre());
+        std::string NombreM;
+        std::cout<<"ingrese el nombre de la Marca ofertada"<<endl;
+        std::cin.ignore();
+        getline(std::cin,NombreM);
+        setNombreMarca(NombreM);
+        Proveedores Proveedor;
+        archivo_Proveedores archivoPROV;
+        int cantidad=archivoPROV.cantidad_de_registros();
+        archivoPROV.listar(cantidad);
+        int op2;
+        std::cout<<"Ingrese el ID del Proveedor que cotizo el precio: "<<std::endl;
+        std::cin>>op2;
+        while(op2<0||op2>cantidad)
+        {
+            std::cout<<"ingrese una opcion correcta"<<std::endl;
+            std::cin>>op2;
+        }
+        Proveedor=archivoPROV.leer_de_disco(op2-1);
+        if(Proveedor.getEstado()==false)
+        {
+            std::cout<<"ingrese una opcion correcta"<<std::endl;
+            std::cin>>op2;
+        }else{
+        setId_Proveedor(Proveedor.getId());
+        setNombreProv(Proveedor.getNombre());
+        }
+
+        std::cout<<"Ingrese el valor de una unidad del producto > $ ";
+       float precio;
+       std::cin>>precio;
+        while(precio<0)
+        {
+            std::cout<<"Ingrese una opcion correcta"<<std::endl;
+            cin>>precio;
+        }
+        setPrecioU(precio);
+                std::cout<<"Ingrese la cantidad de unidades del producto, equivalente al precio>";
+       int Cantidadxunidad;
+       std::cin>>Cantidadxunidad;
+        while(precio<0)
+        {
+            std::cout<<"Ingrese una opcion correcta"<<std::endl;
+            cin>>Cantidadxunidad;
+        }
+        setUnidadMin(Cantidadxunidad);
+        setPrecioU(precio);
+        std::cout<<std::endl;
+    }
+
     void Precios::Mostrar(Precios pre)
     {
         std::cout<<"-Nombre del Producto: "<<pre.getNombreProd()<<std::endl;
