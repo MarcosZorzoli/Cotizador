@@ -16,7 +16,7 @@ for(int y=0;y<obj.cantidad_de_registros();y++){
 
     cot=obj.leer_de_disco(y);
 
-   if(cot.getId_Producto()==IDprod)
+   if(cot.getId_Producto()==IDprod && cot.getEstado())
    {
     cantCot++;
    }
@@ -34,7 +34,7 @@ for(int y=0;y<obj.cantidad_de_registros();y++){
 
     cot=obj.leer_de_disco(y);
 
-   if(cot.getId_Categoria()==IDcat)
+   if(cot.getId_Categoria()==IDcat&&cot.getEstado())
    {
     cantCot++;
    }
@@ -101,18 +101,15 @@ while(pos<acot.cantidad_de_registros())
     maximo=cot.getPrecioU()*cot.getCantCompra();
     posMax=pos;
     pos++;
-    }else{
-    if((cot.getPrecioU()*cot.getCantCompra())>maximo)
-       {
+    }else if ((cot.getPrecioU()*cot.getCantCompra())>maximo){
     maximo=cot.getPrecioU()*cot.getCantCompra();
     posMax=pos;
     pos++;
-       }
     }
-
-    }
+    }else{
     pos++;
 
+    }
 
 }
 
