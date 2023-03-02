@@ -61,19 +61,16 @@ while(pos<aprod.cantidad_de_registros())
     maximo=contarCotizaciones(prod.getId_Producto());
     posMax=pos;
     pos++;
-    }else{
-    if(contarCotizaciones(prod.getId_Producto())>maximo)
-       {
+    }else if((contarCotizaciones(prod.getId_Producto())>maximo)){
     maximo=contarCotizaciones(prod.getId_Producto());
     posMax=pos;
     pos++;
        }
-    }
-    }
+    }else{
     pos++;
-
-
+    }
 }
+
 
 std::cout<<"El Producto mas cotizado es: "<<std::endl;
 prod=aprod.leer_de_disco(posMax);
@@ -100,18 +97,19 @@ while(pos<acot.cantidad_de_registros())
     {
     maximo=cot.getPrecioU()*cot.getCantCompra();
     posMax=pos;
+    primero=false;
     pos++;
-    }else if ((cot.getPrecioU()*cot.getCantCompra())>maximo){
+    }else{
+        if((cot.getPrecioU()*cot.getCantCompra())>maximo){
     maximo=cot.getPrecioU()*cot.getCantCompra();
     posMax=pos;
     pos++;
-    }
     }else{
     pos++;
-
     }
-
-}
+    }}else{
+    pos++;
+    }}
 
 std::cout<<"El ID de la cotizacion mas actual y de mayor importe, es la Cotizacion "<<std::endl;
 std::cout<<"numero #"<< posMax+1<<std::endl;
