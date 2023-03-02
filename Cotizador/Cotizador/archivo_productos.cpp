@@ -1,6 +1,7 @@
 #include "archivo_productos.h"
-#include "archivo_categorias.h"
 #include <iostream>
+#include "archivo_categorias.h"
+#include "Categorias.h"
 
 void archivo_productos::guardar(Productos producto)
 {
@@ -62,16 +63,50 @@ Productos archivo_productos::leer_de_disco(int posicion)
 
 void archivo_productos::listar(int cantidad)
 {
+
+    Productos prod;
+    for(int i=0;i<cantidad_de_registros();i++)
+    {
+        prod=leer_de_disco(i);
+        if(prod.getEstado())
+        {
+            categorias cat;
+            Archivo_Categoria acat;
+            for(int y=0;y<acat.cantidad_categorias();y++)
+            {
+                    cat=acat.leer_de_disco(y);
+                    if(cat.get_id()==prod.getId_Categoria()&&cat.getEstado())
+                    {
+                        prod.Mostrar();
+                    }
+            }
+
+        }
+
+    }
+
+
+
+    /*/
     for (int i = 0; i < cantidad; i++)
     {
         Productos producto;
         producto=leer_de_disco(i);
         if(producto.getEstado())
-        {std::cout<<"------------------"<<std::endl;
+        {
+        Archivo_Categoria acat;
+        categorias cat;
+        cat=acat.leer_de_disco(producto.getId_Categoria());
+        if(cat.getEstado())
+        {
+
+        std::cout<<"------------------"<<std::endl;
         producto.Mostrar();
         }
+
+        }
     }
-}
+/*/}
 
 int archivo_productos::get_cantidad_Activa(int cantidad)
 { int contador=0;
@@ -136,9 +171,8 @@ void archivo_productos::baja_Logica(int id)
         Producto.setEstado(false);
         guardar(Producto, id-1);
         break;
-        }else{
-        i++;
         }
+        i++;
         }
 
 }
