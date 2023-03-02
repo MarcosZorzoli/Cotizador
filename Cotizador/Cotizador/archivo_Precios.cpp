@@ -124,6 +124,16 @@ void archivo_precios::baja_Logica()
 }
 }
 
+void archivo_precios::baja_Logica(int idprod)
+{
+        Precios Precio;
+        Precio=leer_de_disco(idprod-1);
+
+        Precio.setEstado(false);
+        guardar(Precio, idprod-1);
+}
+
+
 void archivo_precios::modificar()
 {
         int op;

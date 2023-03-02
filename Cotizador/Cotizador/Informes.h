@@ -60,12 +60,16 @@ while(pos<aprod.cantidad_de_registros())
     {
     maximo=contarCotizaciones(prod.getId_Producto());
     posMax=pos;
+    primero=false;
     pos++;
-    }else if((contarCotizaciones(prod.getId_Producto())>maximo)){
+    }else{
+    if((contarCotizaciones(prod.getId_Producto())>maximo)){
     maximo=contarCotizaciones(prod.getId_Producto());
     posMax=pos;
     pos++;
        }
+    }
+    pos++;
     }else{
     pos++;
     }
@@ -139,22 +143,21 @@ while(pos<acat.cantidad_categorias())
     {
     maximo=contarCategorias(cat.get_id());
     posMax=pos;
+    primero=false;
     pos++;
-    }else{
-    if(contarCategorias(cat.get_id())>maximo)
+    }else if(contarCategorias(cat.get_id())>maximo)
        {
     maximo=contarCategorias(cat.get_id());
     posMax=pos;
     pos++;
        }
-    }
-    }
     pos++;
-
-
+    }else{
+    pos++;
+    }
 }
 
-std::cout<<"El ID de la categoria actualmente mas cotizada es:"<<std::endl;
+std::cout<<"El ID de la categoria mas cotizada es:"<<std::endl;
 std::cout<<"---- Categoria :----"<<std::endl;
 cat=acat.leer_de_disco(posMax);
 cat.mostrar();

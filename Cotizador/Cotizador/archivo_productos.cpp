@@ -123,6 +123,16 @@ void archivo_productos::baja_Logica()
 }
 }
 
+void archivo_productos::baja_Logica(int id)
+{
+        Productos producto;
+        producto=leer_de_disco(id-1);
+
+        producto.setEstado(false);
+        guardar(producto, id-1);
+
+}
+
 void archivo_productos::modificar()
 {
         int op;

@@ -1,6 +1,11 @@
 #ifndef ARCHIVO_CATEGORIAS_H_INCLUDED
 #define ARCHIVO_CATEGORIAS_H_INCLUDED
 #include "Categorias.h"
+#include "Productos.h"
+#include "archivo_productos.h"
+#include "Precios.h"
+#include "archivo_Precios.h"
+
 class Archivo_Categoria
 {
 public:

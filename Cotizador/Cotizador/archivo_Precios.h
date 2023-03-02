@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 
+
 class archivo_precios{
 
 public:
@@ -16,6 +17,8 @@ public:
     int get_cantidad_Activa(int cantidad);
     void baja_Logica();
     void modificar();
+    void baja_Logica(int idprod);
+
 };
 
 #endif // ARCHIVO_PRECIOS_H_INCLUDED

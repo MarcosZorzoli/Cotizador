@@ -66,7 +66,6 @@ Productos::Productos()
     {
         int op;
         Archivo_Categoria ArchivoC;
-        int cant=ArchivoC.cantidad_categorias();
         ArchivoC.listar_categorias();
     std::cout<<std::endl;
     std::cout<<"Ingrese de ID de la categoria a..."<<std::endl;

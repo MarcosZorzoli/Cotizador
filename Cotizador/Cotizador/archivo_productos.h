@@ -20,7 +20,7 @@ void guardar(Productos producto);
     void obtener_productos(Productos* prod, int cantidad);
     void listaXcategoria();
     bool Existe(int opcion);
-
+    void baja_Logica(int id);
 };
 
 

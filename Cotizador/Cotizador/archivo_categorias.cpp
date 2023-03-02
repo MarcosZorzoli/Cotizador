@@ -17,15 +17,66 @@ void Archivo_Categoria::baja_Logica()
             {
                 if(cod==cat[i].get_id())
                 {
+        std::cout<<"Si elimina la Categoria se borrará/n el/los siguiente/s producto/s y los precios asociados"<<std::endl;
+        Productos prod;
+        archivo_productos aprod;
+        int pos=0;
+        while(pos<aprod.cantidad_de_registros())
+        {
+            prod=aprod.leer_de_disco(pos);
+            if(prod.getId_Categoria()==cod)
+            {
+                prod.mostrar();
+                std::cout<<std::endl;
+                pos++;
+            }else{
+            pos++;
+            }
+        }
+
                            char op2;
         std::cout<<"esta seguro de que desea eliminar la Categoria?"<<std::endl;
         std::cout<<"[S/N]"<<std::endl;
         std::cin>>op2;
         if(op2=='s'||op2=='S')
         {
+            int idproducto;
   cat[i].setEstado(false);
                     cat[i].sobreescribir_categoria(c,i);
                     delete [] cat;
+
+        int posicion=0;
+        while(posicion<aprod.cantidad_de_registros())
+        {
+            prod=aprod.leer_de_disco(posicion);
+            if(prod.getId_Categoria()==cod)
+            {
+                idproducto=prod.getId_Producto();
+                aprod.baja_Logica(cod);
+                std::cout<<std::endl;
+                posicion++;
+            }else{
+            posicion++;
+            }
+        }
+        archivo_precios aprecios;
+        Precios precio;
+             int posi=0;
+
+        while(posi<aprecios.cantidad_de_registros())
+        {
+            precio=aprecios.leer_de_disco(posi);
+            if(precio.getId_Producto()==idproducto)
+            {
+                aprecios.baja_Logica(idproducto);
+                std::cout<<std::endl;
+                posi++;
+            }else{
+            posi++;
+            }
+        }
+
+
                       system("pause");
         } else {
                             delete [] cat;

@@ -345,21 +345,25 @@
 	<iostream>
 	<fstream>
 
-1676575885 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_categorias.cpp
+1677762127 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_categorias.cpp
 	"archivo_categorias.h"
 	<iostream>
 
-1671006821 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_categorias.h
+1677762111 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_categorias.h
 	"Categorias.h"
+	"Productos.h"
+	"archivo_productos.h"
+	"Precios.h"
+	"archivo_Precios.h"
 
 1671003990 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\categorias.h
 	<string>
 
-1671132165 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_precios.cpp
+1677762111 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_precios.cpp
 	"archivo_Precios.h"
 	"Precios.h"
 
-1669749246 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_precios.h
+1677762111 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_precios.h
 	"Precios.h"
 	<iostream>
 	<fstream>
@@ -370,12 +374,12 @@
 	<cstring>
 	<string>
 
-1671007225 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.cpp
+1677761247 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.cpp
 	"archivo_productos.h"
 	"archivo_categorias.h"
 	<iostream>
 
-1671007225 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.h
+1677761289 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_productos.h
 	"Productos.h"
 
 1669861622 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\productos.h
@@ -445,7 +449,7 @@
 	<string>
 	<cstdlib>
 
-1671006766 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\productos.cpp
+1677761316 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\productos.cpp
 	"archivo_productos.h"
 	"Productos.h"
 	"archivo_categorias.h"
@@ -579,7 +583,7 @@
 	<string>
 	<cstdlib>
 
-1677760093 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\informes.h
+1677765616 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\informes.h
 	"archivo_productos.h"
 	"Productos.h"
 	"archivo_Cotizacion.h"
