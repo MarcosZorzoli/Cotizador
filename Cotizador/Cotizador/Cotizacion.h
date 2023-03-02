@@ -4,10 +4,11 @@
 #include <iostream>
 #include <cstring>
 #include <string>
-
+#include "Tiempo.h"
 
 class Cotizacion{
 private:
+    Fecha fregistro;
     int id;
     int id_categoria;
     int id_producto;
@@ -37,7 +38,7 @@ public:
     void setNombreProd(std::string Nombre);
     void setNombreProv(std::string Nombre);
     void setEstado(bool nEstado);
-
+    void setFecha();
     int getId();
     int getId_Categoria();
     int getId_Producto();
@@ -50,6 +51,7 @@ public:
     std::string getNombreProd();
     std::string getNombreProv();
     bool getEstado();
+    Fecha getFecha();
 
 
     void Cargar();

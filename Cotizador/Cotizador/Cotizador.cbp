@@ -45,6 +45,7 @@
 		<Unit filename="Productos.h" />
 		<Unit filename="Proveedores.cpp" />
 		<Unit filename="Proveedores.h" />
+		<Unit filename="Tiempo.h" />
 		<Unit filename="archivo_Cotizacion.cpp" />
 		<Unit filename="archivo_Cotizacion.h" />
 		<Unit filename="archivo_Precios.cpp" />

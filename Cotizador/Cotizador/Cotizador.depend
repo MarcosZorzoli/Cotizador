@@ -404,7 +404,7 @@
 	<iostream>
 	<string>
 
-1676581788 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\main.cpp
+1677756305 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\main.cpp
 	<iostream>
 	<stdlib.h>
 	"Menues.h"
@@ -555,17 +555,18 @@
 	"Cotizacion.h"
 	"archivo_Cotizacion.h"
 
-1671137684 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\cotizacion.h
+1677696645 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\cotizacion.h
 	<iostream>
 	<cstring>
 	<string>
+	"Tiempo.h"
 
 1671139211 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\archivo_cotizacion.h
 	"Cotizacion.h"
 	<iostream>
 	<fstream>
 
-1671141848 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\cotizacion.cpp
+1677757856 source:c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\cotizacion.cpp
 	"Cotizacion.h"
 	"archivo_Cotizacion.h"
 	"Precios.h"
@@ -578,9 +579,13 @@
 	<string>
 	<cstdlib>
 
-1676586356 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\informes.h
+1677693242 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\informes.h
 	"archivo_productos.h"
 	"Productos.h"
 	"archivo_Cotizacion.h"
 	"Cotizacion.h"
+
+1677757209 c:\users\tt\utn\laboratorio 2\cotizador\cotizador\cotizador\tiempo.h
+	<iostream>
+	<ctime>
 

@@ -11,9 +11,18 @@
 #include <cstdlib>
 
 using namespace std;
+
 void Cotizacion::setId(int ID)
 {
 id=ID;
+}
+void Cotizacion::setFecha()
+{
+Fecha f;
+f=f.diadehoy();
+fregistro.anio=f.anio;
+fregistro.mes=f.mes;
+fregistro.dia=f.dia;
 }
 void Cotizacion::setId_Categoria(int _id)
 {
@@ -122,7 +131,10 @@ bool Cotizacion::getEstado()
 {
  return estado;
 }
-
+Fecha Cotizacion::getFecha()
+{
+return fregistro;
+}
  void Cotizacion::Cargar()
     {
         Cotizacion Cotiza;
@@ -220,6 +232,7 @@ int can=archivoPrec.cantidad_de_registros();
         Cotiza.setCantCompra(cantidad);
         std::cout<<"Cantidad comprada= "<<Cotiza.getCantCompra()*Cotiza.getUnidadMin()<<std::endl;
         std::cout<<"Total compra= $"<<Cotiza.getCantCompra()*Cotiza.getPrecioU()<<std::endl;
+        Cotiza.setFecha();
         archivo_cotizacion archivoCOT;
         archivoCOT.guardar(Cotiza);
         system("cls");
@@ -230,6 +243,9 @@ int can=archivoPrec.cantidad_de_registros();
     {
         std::cout<<std::endl;
         std::cout<<"-#ID: "<<Cot.getId()<<std::endl;
+        std::cout<<"-Fecha de la cotizacion: ";
+        Cot.getFecha().mostrarFecha(Cot.getFecha());
+        std::cout<<std::endl;
         std::cout<<"-Nombre del Producto: "<<Cot.getNombreProd()<<std::endl;
         std::cout<<"-Marca ofertada: "<<Cot.getNombreMarca()<<std::endl;
         std::cout<<"-Nombre proveedor: "<<Cot.getNombreProv()<<std::endl;
@@ -237,6 +253,7 @@ int can=archivoPrec.cantidad_de_registros();
         std::cout<<"-Precio Unitario: $"<<Cot.getPrecioU()<<std::endl;
         std::cout<<"-Cantidad Total comprada: "<<Cot.getCantCompra()*Cot.getUnidadMin()<<std::endl;
         std::cout<<"-Total Compra: $"<<Cot.getCantCompra()*Cot.getPrecioU()<<std::endl;
+
         std::cout<<"---------------------------"<<std::endl;
 
     }
