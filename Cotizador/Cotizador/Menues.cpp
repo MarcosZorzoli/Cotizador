@@ -323,21 +323,42 @@ void Menu::menu_categorias()
         {
             system("cls");
             cout<<" 3-Modificar categoria"<<endl;
-            Archivo_Categoria ac;
-            ac.modificar_categorias();
+            Archivo_Categoria archivo;
+            int cant=archivo.cantidad_categorias();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardadas categorias Activas"<<endl<<endl;
+            }
+            else{
+            archivo.modificar_categorias();
+        }
+                    system("pause");
+
         }
         break;
         case 4:
         {
             system("cls");
             cout<<" 4- Eliminar categoria"<<endl;
-            Archivo_Categoria cat;
-            cat.baja_Logica();
+                        Archivo_Categoria archivo;
+            int cant=archivo.cantidad_categorias();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardadas categorias Activas"<<endl<<endl;
+            }
+            else{
+            archivo.baja_Logica();
+        }
+                    system("pause");
+
         }
         break;
 
         }
-    }
+        }
+
 }
 
 void Menu::menu_proveedores()
@@ -407,8 +428,17 @@ void Menu::menu_proveedores()
         {
            system("cls");
             cout<<"Modificar Proveedor"<<endl<<endl;
-            archivo_Proveedores archivo;
+             archivo_Proveedores archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Proveedores Activos"<<endl<<endl;
+            }
+            else
+            {
             archivo.modificar();
+            }
             system("pause");
         }
         break;
@@ -416,17 +446,35 @@ void Menu::menu_proveedores()
         {
              system("cls");
             cout<<"Eliminar Proveedor"<<endl<<endl;
-
-            archivo_Proveedores archivo;
+             archivo_Proveedores archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Proveedores Activos"<<endl<<endl;
+            }
+            else
+            {
             archivo.baja_Logica();
+            }
             system("pause");
         }
         break;
         case 5:
         {
+             archivo_Proveedores archivo;
+            int cant=archivo.cantidad_de_registros();
+            int cantActiva=archivo.get_cantidad_Activa(cant);
+            if (cantActiva==0)
+            {
+                cout<<"No se encuentran guardados Proveedores Activos"<<endl<<endl;
+            }
+            else
+            {
 
                         system("cls");
 menu_precios();
+            }
             system("pause");
         }
         break;

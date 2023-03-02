@@ -40,11 +40,11 @@ void Archivo_Categoria::baja_Logica()
         std::cin>>op2;
         if(op2=='s'||op2=='S')
         {
-            int idproducto;
+
   cat[i].setEstado(false);
                     cat[i].sobreescribir_categoria(c,i);
                     delete [] cat;
-
+        int idproducto;
         int posicion=0;
         while(posicion<aprod.cantidad_de_registros())
         {
